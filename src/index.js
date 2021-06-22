@@ -5,14 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Provider} from "react-redux";
+import {getRistoranti} from "./api/risorantiAPI";
 
-//const store = createStore()
-//Ciao giammo
+const ristoranti = getRistoranti()
+const store = createStore()
+
 ReactDOM.render(
     <React.StrictMode>
-        <Provider>
-            <App/>
-        </Provider>
+        {/*    <Provider>
+        </Provider>*/}
+        <App/>
     </React.StrictMode>,
     document.getElementById('root')
 );
