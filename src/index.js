@@ -8,6 +8,7 @@ import {Provider} from "react-redux";
 
 //const store = createStore()
 //Ciao giammo
+//Ciao sono Fabrizio
 ReactDOM.render(
     <React.StrictMode>
         <Provider>
