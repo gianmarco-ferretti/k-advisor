@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+
 
 function App() {
 
@@ -7,9 +9,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Kromin Advisor</h1>
+      <header >
+      <NavBar/>
       </header>
+    
     </div>
   );
 }

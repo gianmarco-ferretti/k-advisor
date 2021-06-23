@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -7,8 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Provider} from "react-redux";
 import {getRistoranti} from "./api/risorantiAPI";
 
-const ristoranti = getRistoranti()
-const store = createStore()
+//const ristoranti = getRistoranti()
+//const store = createStore()
 
 ReactDOM.render(
     <React.StrictMode>

@@ -6,7 +6,23 @@
   height: 40vmin;
   pointer-events: none;
 }
+.NavEnterBtn {
+  border-radius: 35%;
+  background-color: black;
+}
 
+.NavSearch{
+  border-radius: 5%;
+  transition: none;
+  border-color: black;
+  
+}
+#Advisor {
+  font-weight: bold;
+}
+.form-inline:active{
+    border-style: none;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
