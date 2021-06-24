@@ -1,7 +1,10 @@
-import React from 'react';
+import loggedReducer from "./loggedReducer";
+import {combineReducers} from "redux";
+import fetchRistorantiReducer from "./fetchRistorantiReducer";
 
-function storeReducer(state = [], actions) {
 
-}
+const allReducers = combineReducers({
+    fetchRistorantiReducer, loggedReducer
+})
 
-export default Index;
+export default allReducers;
