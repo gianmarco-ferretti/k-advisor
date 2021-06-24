@@ -62,3 +62,17 @@
     transform: rotate(360deg);
   }
 }
+
+/* Inizio CSS demmerda scritto da Fabrizio*/
+#img {
+  width: 190px;
+  height: 196px;
+  }
+  
+  #bubble {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background: #5DC7A0;
+  }
+/* Fine CSS demmerda scritto da Fabrizio*/
