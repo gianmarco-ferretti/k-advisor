@@ -1,3 +1,4 @@
+/* Inizio Card demmerda fatta da Fabrizio*/
 import React from 'react'
 import { Row, Card, Button, Col } from 'react-bootstrap'
 
@@ -25,3 +26,4 @@ export default function card() {
             </Card>
     )
 }
+/* Fine Card demmerda fatta da Fabrizio*/
