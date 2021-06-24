@@ -6,7 +6,17 @@
   height: 40vmin;
   pointer-events: none;
 }
-.NavEnterBtn {
+
+.IntText {
+  display: flex;
+  flex-direction: column;
+    padding:10% 10% 5% 10%;
+    align-items: flex-start
+}
+#NavContainer{
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+.NavEnterBtn {  
   border-radius: 35%;
   background-color: black;
 }
@@ -31,6 +41,7 @@
 
 .App-header {
   background-color: #282c34;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
