@@ -62,3 +62,15 @@
     transform: rotate(360deg);
   }
 }
+
+#img {
+  width: 190px;
+  height: 196px;
+  }
+  
+  #bubble {
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background: #5DC7A0;
+  }
