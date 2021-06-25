@@ -2,7 +2,7 @@
 import React from 'react'
 import { Row, Card, Button, Col } from 'react-bootstrap'
 
-export default function card() {
+export default function MyCard() {
     return (
             <Card>
                 <Row>

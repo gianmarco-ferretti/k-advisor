@@ -1,5 +1,7 @@
 import React from 'react'
 import { Navbar,Form,FormControl,Button,Container,Col,InputGroup } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+
 
 
 export default function NavBar() {
@@ -7,12 +9,12 @@ export default function NavBar() {
         <Container fluid id='NavContainer'>
     <Navbar bg="light" epand = "true">
     <Col>
-    <Navbar.Brand href="#home"><a>Kromin</a><a id = 'Advisor'>Advisor</a></Navbar.Brand>
+    <Link to= "/"><Navbar.Brand href="#home"><a>Kromin</a><a id = 'Advisor'>Advisor</a></Navbar.Brand></Link>
     </Col>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Col >
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="NavSearch" size='sm' />
+    <Form inline >
+      <input type="text" id = "searchbar" placeholder="Search" className="NavSearch" size='sm' />
     </Form>
     </Col>
     <Col>
@@ -28,3 +30,4 @@ export default function NavBar() {
         </Container>
     )
 }
+    

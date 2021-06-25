@@ -1,12 +1,23 @@
+
+
 .App {
   text-align: center;
+  background-color:   rgb(225, 220, 220);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+/*Valerio css*/
+#CardsColumns {
+  text-align: left;
 
+}
+#searchbar input:focus{
+    border-style: solid !important;
+    border-color: green !important; 
+}
 .IntText {
   display: flex;
   flex-direction: column;
@@ -33,6 +44,7 @@
 .form-inline:active{
     border-style: none;
 }
+/*Fine css Vale*/
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
