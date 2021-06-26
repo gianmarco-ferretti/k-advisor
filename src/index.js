@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -14,10 +14,6 @@ const composedEnhancer = compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS
 
 
 const store = createStore(allReducers, composedEnhancer);
-
-
-
-
 
 store.dispatch(fetchRistoranti)
 
