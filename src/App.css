@@ -1,119 +1,133 @@
 .App {
-  text-align: center;
- 
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
+
+/*Gianmarco css*/
+#Intestazione-container {
+    position: relative;
+    min-height: 150px;
+}
+
+#Intestazione-container h3 {
+    position: absolute;
+    bottom: 20px;
+}
+
+/*Fine Gianmarco css*/
 /*Valerio css*/
 .App {
     background-color: rgb(202, 196, 196);
 }
+
 #CardsColumns {
-  text-align: left;
+    text-align: left;
 }
 
 #cards {
-    
     margin-bottom: 8%;
 }
 
-.link{
-  text-decoration: none;
-}
 .IntText {
-  display: flex;
-  flex-direction: column;
-  padding:10% 10% 5% 10%;
-  align-items: flex-start
+    display: flex;
+    flex-direction: column;
+    padding: 10% 10% 5% 10%;
+    align-items: flex-start
 }
-#NavContainer{
-  border-bottom: 2px solid rgb(0, 0, 0);
+
+#NavContainer {
+    border-bottom: 2px solid rgb(0, 0, 0);
 }
+
 .NavEnterBtn {
-  border-radius: 35%;
-  background-color: black;
+    border-radius: 35%;
+    background-color: black;
 }
 
-.NavSearch{
-  border-radius: 5%;
-  transition: none;
-  border-color: black;
+.NavSearch {
+    border-radius: 5%;
+    transition: none;
+    border-color: black;
 
 }
+
 #Advisor {
-  font-weight: bold;
+    font-weight: bold;
 }
-.form-inline:active{
-  border-style: none;
+
+.form-inline:active {
+    border-style: none;
 }
+
 /*Fine css Vale*/
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
- 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Inizio CSS demmerda scritto da Fabrizio*/
 #img {
-  background-image: url("https://s3-alpha-sig.figma.com/img/e6fe/d0a6/b5e1065dae506702ff89b0b602c1ca9d?Expires=1625443200&Signature=cyKakjPpgAmiH7EzxSqpFm4IQlE~SSFV8uCjICXs5slBNrX~XnXAuaoBZdPXT1SPe5X4FTeDvQ0MUCJlUKWkeVBru9NUxP0Kcoxfy9TL~uN2lExRp~VhIWPvaJ0tebfv5DJPpuot08ncvPbZpbbODWQs8ChRS0W1OsEP1i0FJ-C-LuNB3sBaJP7S84VpRKk00OPQzHzz67u3Ze2nd~OdvrWAAquPAIZT1Eih6wQn3yV7Hh3AkZACOVz19qAGCcEAk-9oPzY2Feo-x9xsHHKDKyWz4tL0LrA-CgfMYSMXaZn6EumxpUDojhbmhHy9EGG-uLWoAftFpjaeIte0g5rY3A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
-  height: 100%;
-  width: 100%;
-  }
-  
-  .bubble {
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  background: #5DC7A0;
-  margin-right: 2px;
-  }
-  
+    background-image: url("https://s3-alpha-sig.figma.com/img/e6fe/d0a6/b5e1065dae506702ff89b0b602c1ca9d?Expires=1625443200&Signature=cyKakjPpgAmiH7EzxSqpFm4IQlE~SSFV8uCjICXs5slBNrX~XnXAuaoBZdPXT1SPe5X4FTeDvQ0MUCJlUKWkeVBru9NUxP0Kcoxfy9TL~uN2lExRp~VhIWPvaJ0tebfv5DJPpuot08ncvPbZpbbODWQs8ChRS0W1OsEP1i0FJ-C-LuNB3sBaJP7S84VpRKk00OPQzHzz67u3Ze2nd~OdvrWAAquPAIZT1Eih6wQn3yV7Hh3AkZACOVz19qAGCcEAk-9oPzY2Feo-x9xsHHKDKyWz4tL0LrA-CgfMYSMXaZn6EumxpUDojhbmhHy9EGG-uLWoAftFpjaeIte0g5rY3A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    height: 100%;
+    width: 100%;
+}
+
+.bubble {
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background: #5DC7A0;
+    margin-right: 2px;
+}
+
 /* Fine CSS demmerda scritto da Fabrizio*/
 /*Inizio CSS Mirco*/
 .mostra {
-  color: black;
-  text-decoration: underline;
+    color: black;
+    text-decoration: underline;
 }
 
 .mostra:hover {
-  color: rgb(117, 117, 117);
-  text-decoration: underline;
+    color: rgb(117, 117, 117);
+    text-decoration: underline;
 }
 
 .form-group input[type="checkbox"]:checked {
-  background-color: black;
+    background-color: black;
 }
+
 /*
 .form-check-input{
     background-color: black !important;
 }
 */
-
 /*Fine CSS Mirco*/
