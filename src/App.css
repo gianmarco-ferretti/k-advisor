@@ -82,16 +82,19 @@
 
 /* Inizio CSS demmerda scritto da Fabrizio*/
 #img {
-  width: 190px;
-  height: 196px;
+  background-image: url("https://s3-alpha-sig.figma.com/img/e6fe/d0a6/b5e1065dae506702ff89b0b602c1ca9d?Expires=1625443200&Signature=cyKakjPpgAmiH7EzxSqpFm4IQlE~SSFV8uCjICXs5slBNrX~XnXAuaoBZdPXT1SPe5X4FTeDvQ0MUCJlUKWkeVBru9NUxP0Kcoxfy9TL~uN2lExRp~VhIWPvaJ0tebfv5DJPpuot08ncvPbZpbbODWQs8ChRS0W1OsEP1i0FJ-C-LuNB3sBaJP7S84VpRKk00OPQzHzz67u3Ze2nd~OdvrWAAquPAIZT1Eih6wQn3yV7Hh3AkZACOVz19qAGCcEAk-9oPzY2Feo-x9xsHHKDKyWz4tL0LrA-CgfMYSMXaZn6EumxpUDojhbmhHy9EGG-uLWoAftFpjaeIte0g5rY3A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  height: 100%;
+  width: 100%;
   }
   
-  #bubble {
+  .bubble {
   border-radius: 50%;
   width: 16px;
   height: 16px;
   background: #5DC7A0;
+  margin-right: 2px;
   }
+  
 /* Fine CSS demmerda scritto da Fabrizio*/
 /*Inizio CSS Mirco*/
 .mostra {
