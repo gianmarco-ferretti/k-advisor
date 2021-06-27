@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {
@@ -7,13 +8,20 @@
   pointer-events: none;
 }
 /*Valerio css*/
+.App {
+    background-color: rgb(202, 196, 196);
+}
 #CardsColumns {
   text-align: left;
-
 }
-#searchbar input:focus{
-  border-style: solid !important;
-  border-color: green !important;
+
+#cards {
+    
+    margin-bottom: 8%;
+}
+
+.link{
+  text-decoration: none;
 }
 .IntText {
   display: flex;

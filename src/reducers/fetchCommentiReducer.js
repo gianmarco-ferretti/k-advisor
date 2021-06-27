@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 function fetchCommentiReducer(state = [], action) {
     switch (action.type) {
@@ -9,4 +9,4 @@ function fetchCommentiReducer(state = [], action) {
     }
 }
 
-export default fetchCommentiReducer;
+export default fetchCommentiReducer;    

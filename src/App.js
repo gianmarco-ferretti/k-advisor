@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+
 import './App.css';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Pagina2 from './components/Pagina2';
 import Pagina1 from './components/Pagina1';
 import NavBar from './components/NavBar';
-import {useSelector} from "react-redux";
+
 
 /*
 import MyChecklist from "./components/MyChecklist";
@@ -16,8 +16,7 @@ import MyCard from './components/MyCard';
 
 function App() {
 
-    const ristoranti = useSelector(state => state.ristoranti)
-    console.log(ristoranti)
+    
 
     return (
         <div className="App">

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar,Form,FormControl,Button,Container,Col,InputGroup } from 'react-bootstrap'
+import { Navbar,Form,Button,Container,Col} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
@@ -9,7 +9,8 @@ export default function NavBar() {
         <Container fluid id='NavContainer'>
     <Navbar bg="light" epand = "true">
     <Col>
-    <Link to= "/"><Navbar.Brand href="#home"><a>Kromin</a><a id = 'Advisor'>Advisor</a></Navbar.Brand></Link>
+    {/* da aggiustare lo stile della scritta */}
+    <Link style={{textDecoration : 'none'}} to= "/">Kromin</Link><Link className='link' to= "/">Advisor</Link> 
     </Col>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Col >
@@ -29,5 +30,5 @@ export default function NavBar() {
 </Navbar>
         </Container>
     )
-}
+}       
     
