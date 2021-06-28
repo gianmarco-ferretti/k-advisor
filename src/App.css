@@ -20,12 +20,35 @@
 
 /*Fine Gianmarco css*/
 /*Valerio css*/
+#Mycarousel{
+        margin-top: 2%;
+        max-height: 600px;
+        justify-content: center;
+        overflow: hidden;
+        
+}
+#menuboxtext{
+        display:flex;
+        flex-direction: row;
+}
+#cardbody {
+        display: flex;
+        flex-direction:row ;
+}
+#cardbody a{
+    font-size: small;
+}
+.menudescription a{
+    text-align: left;
+}
+
 #IntestazioneSingle-container {
     position:relative;
     min-height: 150px;
     padding-left: 11%;
     padding-top:5%;
-}
+    padding-bottom: 2%;
+}   
 
 .App {
     background-color:#E9E9E9 ;

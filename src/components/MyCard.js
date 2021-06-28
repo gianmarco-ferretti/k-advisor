@@ -2,7 +2,7 @@
 import React from 'react'
 import {Row, Card, Button, Col, Container} from 'react-bootstrap'
 import {useSelector} from 'react-redux'
-import {map} from "react-bootstrap/ElementChildren";
+
 import { Link } from 'react-router-dom';
 
 
@@ -13,7 +13,7 @@ export default function MyCard() {
     return (
         <Container fluid={'ListaRistoranti'}>
             {ristoranti.map((k, i) =>
-                <Card className={'my-3'}>
+                <Card className={'my-3'} key={i}>
                     <Row>
                         <Col className="col-2 p-0">
                             <Card.Img id="img" src={ristoranti[i].photos[0]}/>
