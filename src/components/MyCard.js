@@ -3,11 +3,12 @@ import React from 'react'
 import {Row, Card, Button, Col, Container} from 'react-bootstrap'
 import {useSelector} from 'react-redux'
 import {map} from "react-bootstrap/ElementChildren";
+import { Link } from 'react-router-dom';
 
 
 export default function MyCard() {
     const ristoranti = useSelector(state => state.ristoranti)
-    console.log(ristoranti[0]);
+    
 
     return (
         <Container fluid={'ListaRistoranti'}>
@@ -19,7 +20,7 @@ export default function MyCard() {
                         </Col>
                         <Col className="col-10 ">
                             <Card.Body className="p-0">
-                                <Card.Title className="text-start">{ristoranti[i].name}</Card.Title>
+                                <Link to = {{ pathname: '/restaurant' ,state:{i}} }><Card.Title className="text-start">{ristoranti[i].name}</Card.Title></Link>
                                 <Card.Text className="d-flex mb-0">
                                     <div className="d-flex mt-1">
                                         {/*TODO FABRIZIO: mettere anche pallini vuoti con display hidden*/}

@@ -20,8 +20,15 @@
 
 /*Fine Gianmarco css*/
 /*Valerio css*/
+#IntestazioneSingle-container {
+    position:relative;
+    min-height: 150px;
+    padding-left: 11%;
+    padding-top:5%;
+}
+
 .App {
-    background-color: rgb(202, 196, 196);
+    background-color:#E9E9E9 ;
 }
 
 #CardsColumns {

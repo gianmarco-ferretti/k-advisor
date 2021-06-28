@@ -5,6 +5,8 @@ import MyNavbar from './components/MyNavbar';
 
 import MyRestaurantList from "./components/MyRestaurantList";
 
+import MySingleRestaurant from './components/MySingleRestaurant';
+
 /*
 import {useSelector} from "react-redux";
 import MyChecklist from "./components/MyChecklist";
@@ -23,6 +25,7 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <MyNavbar></MyNavbar>
+                <Route path = "/restaurant" exact component = {MySingleRestaurant}/>
                 <Route path="/" exact component={MyRestaurantList}/>
             </BrowserRouter>
         </div>
