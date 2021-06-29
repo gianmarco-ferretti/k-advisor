@@ -6,6 +6,7 @@ import {GrPersonalComputer} from "react-icons/gr"
 import {AiOutlineClockCircle} from "react-icons/ai"
 import { useSelector } from "react-redux";
 import { Container, Row } from "react-bootstrap";
+import MyRating from "./MyRating";
 
 export default function MySingleResHeader({ index }) {
   const ristoranti = useSelector((state) => state.ristoranti);
@@ -29,13 +30,7 @@ export default function MySingleResHeader({ index }) {
         <h3 className={"align-self-end"}>{ristoranti[index].name}</h3>
       </Row>
       <Row className={"justify-content-left  intestazione"}>
-       
-        <a className="bubble"></a>
-        <a className="bubble"></a>
-        <a className="bubble"></a>
-        <a className="bubble"></a>
-        <a className="bubble"></a>
-       
+          <MyRating score={ristoranti[index].rating}/>
         <a>{ristoranti[index].num_reviews}</a>
         <a> |{ristoranti[index].price_level}</a>
       </Row>
@@ -46,14 +41,14 @@ export default function MySingleResHeader({ index }) {
           {ristoranti[index].address_obj.city}{" "}
           {ristoranti[index].address_obj.country}{" "}
         </a>
-       
+
         <a> | <FiPhone/>  {ristoranti[index].phone}</a>
         <a> | <GrPersonalComputer/>  sito web</a>
         <a> | <GiKnifeFork />  Menù </a>
         <a> | <AiOutlineClockCircle/>  {open} </a>
-        
+
         </span>
       </Row>
     </Container>
-  );    
+  );
 }

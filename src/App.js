@@ -7,8 +7,8 @@ import MyRestaurantList from "./components/MyRestaurantList";
 
 import MySingleRestaurant from './components/MySingleRestaurant';
 
-/*
 import {useSelector} from "react-redux";
+/*
 import MyChecklist from "./components/MyChecklist";
 import IntestazionePg2 from './components/IntestazionePg2';
 import IntestazionePg1 from './components/IntestazionePg1';
@@ -18,8 +18,9 @@ import MyCard from './components/MyCard';
 
 function App() {
 
-    /*    const ristoranti = useSelector(state => state.ristoranti)
-        console.log(ristoranti[0])*/
+     /*       const ristoranti = useSelector(state => state.ristoranti)
+            console.log(ristoranti[0])*/
+
 
     return (
         <div className="App">

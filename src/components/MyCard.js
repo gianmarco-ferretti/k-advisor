@@ -1,52 +1,51 @@
-/* Inizio Card demmerda fatta da Fabrizio*/
-import React from 'react'
-import {Row, Card, Button, Col, Container} from 'react-bootstrap'
-import {useSelector} from 'react-redux'
-
-import { Link } from 'react-router-dom';
+import React from 'react';
+import {Row, Card, Button, Col, Container} from 'react-bootstrap';
+import {useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
+import MyModalPrenota from "./MyModalPrenota";
+import MyRating from "./MyRating";
 
 
 export default function MyCard() {
     const ristoranti = useSelector(state => state.ristoranti)
-    
+    const [modalShow, setModalShow] = React.useState(false); //popup
 
     return (
         <Container fluid={'ListaRistoranti'}>
-            {ristoranti.map((k, i) =>
+            {ristoranti.map((ristorante, i) =>
                 <Card className={'my-3'} key={i}>
                     <Row>
-                        <Col className="col-2 p-0">
-                            <Card.Img id="img" src={ristoranti[i].photos[0]}/>
+                        <Col className="col-4 p-0 ">
+                            <Card.Img id="img" src={ristorante.photos[0]}/>
                         </Col>
-                        <Col className="col-10 ">
+                        <Col className="col-8 ">
                             <Card.Body className="p-0">
-                                <Link to = {{ pathname: '/restaurant' ,state:{i}} }><Card.Title className="text-start">{ristoranti[i].name}</Card.Title></Link>
+                                {/*   TODO GIANMARCO: mettere path dinamico con tilde e $*/}
+                                <Link to={{pathname: '/restaurant', state: {i}}}><Card.Title
+                                    className="text-start">{ristorante.name}</Card.Title></Link>
                                 <Card.Text className="d-flex mb-0">
-                                    <div className="d-flex mt-1">
-                                        {/*TODO FABRIZIO: mettere anche pallini vuoti con display hidden*/}
-                                        {/*TODO GIANMARCO: prendere dati sul rating*/}
-                                        <a className="bubble"></a>
-                                        <a className="bubble"></a>
-                                        <a className="bubble"></a>
-                                        <a className="bubble"></a>
-                                        <a className="bubble"></a>
-                                    </div>
-                                    <a className="d-flex ms-1">{ristoranti[i].num_reviews}</a>
-                                    <p className="d-flex ms-1">|</p>
+                                    <MyRating score={ristorante.rating}/>
+                                    <a className="d-flex mx-1">{ristorante.num_reviews}</a>
+                                    <span className="d-flex ms-1">|</span>
                                     {/*TODO GIANMARCO: prendere dati sul is_open*/}
-                                    <p className="d-flex ms-1 text-danger">Oggi chiuso</p>
+                                    <span className="d-flex ms-1 text-danger">Oggi chiuso</span>
                                 </Card.Text>
                                 <Card.Text className="d-flex">
-                                    <p>{ristoranti[i].category.localized_name}</p>
-                                    <p className="ms-1">|</p>
-                                    <p className="ms-1" id={'fascia_di_prezzo'}>{ristoranti[i].price_level}</p>
-                                    <p className="ms-1">|</p>
+                                    <span>{ristorante.category.localized_name}</span>
+                                    <span className="ms-1">|</span>
+                                    <span className="ms-1" id={'fascia_di_prezzo'}>{ristorante.price_level}</span>
+                                    <span className="ms-1">|</span>
                                     {/*TODO FABRIZIO: mettere iconcina forchetta e coltello*/}
                                     <a className="ms-1">Menù</a>
                                 </Card.Text>
                                 <Card.Footer className="d-flex flex-column align-items-start">
-                                    <p>{ristoranti[i].address_obj.city}, {ristoranti[i].address_obj.country}</p>
-                                    <Button variant="warning" className="rounded-pill">Prenota</Button>
+                                    <p>{ristorante.address_obj.city}, {ristorante.address_obj.country}</p>
+                                    <Button variant="warning" className="rounded-pill font-weight-bold btn-prenota"
+                                            onClick={() => setModalShow(true)}>Prenota</Button>
+                                    <MyModalPrenota
+                                        show={modalShow}
+                                        onHide={() => setModalShow(false)}
+                                    />
                                 </Card.Footer>
                             </Card.Body>
                         </Col>

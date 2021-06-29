@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, {render} from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -19,7 +19,9 @@ store.dispatch(fetchRistoranti)
 
 store.dispatch(fetchCommenti('https://jsonplaceholder.typicode.com/users'))
 
-
+store.subscribe(function (){
+    console.log('Subscribed state change!!!')
+})
 
 ReactDOM.render(
     <React.StrictMode>

@@ -18,6 +18,51 @@
     bottom: 20px;
 }
 
+.modal-backdrop{
+    background-color: rgba(0, 0, 0, 0.2) !important;
+
+}
+
+.modal-content{
+    border-color: white !important;
+    border-radius: 25px !important;
+}
+
+.my-modal-shadow{
+    background-color: #fff;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    -webkit-box-shadow: rgba(0,0,0,0.2) 0px 0 10px;
+    -moz-box-shadow: rgba(0,0,0,0.2) 0 0 10px;
+    box-shadow: rgba(0,0,0,0.2) 0 0 10px;
+}
+
+#img {
+    background-color: #282c34;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+[class*='rating']{
+    border: 1px solid #5DC7A0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 2px;
+}
+.empty-rating {
+
+}
+
+.full-rating{
+    background-color: #5DC7A0;
+}
+
+.half-rating {
+    background: linear-gradient(90deg, #5DC7A0 50%, white 50%);
+}
+
 /*Fine Gianmarco css*/
 /*Valerio css*/
 #Mycarousel{
@@ -43,15 +88,15 @@
 }
 
 #IntestazioneSingle-container {
-    position:relative;
+    position: relative;
     min-height: 150px;
     padding-left: 11%;
-    padding-top:5%;
+    padding-top: 5%;
     padding-bottom: 2%;
 }   
 
 .App {
-    background-color:#E9E9E9 ;
+    background-color: #E9E9E9;
 }
 
 #CardsColumns {
@@ -124,22 +169,7 @@
     }
 }
 
-/* Inizio CSS demmerda scritto da Fabrizio*/
-#img {
-    background-image: url("https://s3-alpha-sig.figma.com/img/e6fe/d0a6/b5e1065dae506702ff89b0b602c1ca9d?Expires=1625443200&Signature=cyKakjPpgAmiH7EzxSqpFm4IQlE~SSFV8uCjICXs5slBNrX~XnXAuaoBZdPXT1SPe5X4FTeDvQ0MUCJlUKWkeVBru9NUxP0Kcoxfy9TL~uN2lExRp~VhIWPvaJ0tebfv5DJPpuot08ncvPbZpbbODWQs8ChRS0W1OsEP1i0FJ-C-LuNB3sBaJP7S84VpRKk00OPQzHzz67u3Ze2nd~OdvrWAAquPAIZT1Eih6wQn3yV7Hh3AkZACOVz19qAGCcEAk-9oPzY2Feo-x9xsHHKDKyWz4tL0LrA-CgfMYSMXaZn6EumxpUDojhbmhHy9EGG-uLWoAftFpjaeIte0g5rY3A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
-    height: 100%;
-    width: 100%;
-}
 
-.bubble {
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    background: #5DC7A0;
-    margin-right: 2px;
-}
-
-/* Fine CSS demmerda scritto da Fabrizio*/
 /*Inizio CSS Mirco*/
 .mostra {
     color: black;
@@ -150,14 +180,4 @@
     color: rgb(117, 117, 117);
     text-decoration: underline;
 }
-
-.form-group input[type="checkbox"]:checked {
-    background-color: black;
-}
-
-/*
-.form-check-input{
-    background-color: black !important;
-}
-*/
 /*Fine CSS Mirco*/

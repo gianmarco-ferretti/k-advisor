@@ -10,7 +10,8 @@ export default function MyNavbar() {
                 <Col>
                     <Link to="/">
                         <div className={'text-body'}>
-                            <a>Kromin</a><a style={{fontWeight: "bold"}}>Advisor</a>
+                            <span>Kromin</span>
+                            <span style={{fontWeight: "bold"}}>Advisor</span>
                         </div>
                     </Link>
                 </Col>
