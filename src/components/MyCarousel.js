@@ -1,10 +1,10 @@
 import React from "react";
 import { Carousel, Container } from "react-bootstrap";
-import { useSelector } from "react-redux";
-export default function MyCarousel({ index }) {
-  const ristoranti = useSelector((state) => state.ristoranti);
-  const photoarray = ristoranti[index].photos;
-  console.log(photoarray);
+
+export default function MyCarousel({ ristorante }) {
+  
+  const photoarray = ristorante.photos;
+
   return (
     <Container>
       <Carousel id="Mycarousel">
@@ -13,7 +13,7 @@ export default function MyCarousel({ index }) {
             <img
               id="carouselimage"
               className="d-block w-100"
-              src={ristoranti[index].photos[i]}
+              src={ristorante.photos[i]}
               alt="First slide"
             />
           </Carousel.Item>

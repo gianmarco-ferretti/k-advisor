@@ -8,7 +8,7 @@ export default function MyNavbar() {
         <Container fluid={'p-0'} id='NavContainer'>
             <Navbar bg="light" epand="true">
                 <Col>
-                    <Link to="/">
+                    <Link to="/" style ={{textDecoration:"inherit"}}>
                         <div className={'text-body'}>
                             <span>Kromin</span>
                             <span style={{fontWeight: "bold"}}>Advisor</span>

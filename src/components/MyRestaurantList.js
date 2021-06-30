@@ -8,18 +8,20 @@ function MyRestaurantList() {
     return (
         <>
             <MyListHeader></MyListHeader>
-            <Container className={'mt-3'}>
-                <Row className={'justify-content-center'}>
-                    <Col md={2} className={'mx-2'}>
+            <Container fluid >
+                <Row >
+                   <Col lg={1}></Col>
+                    <Col   lg="auto" className={'m-4 '}>
                         <MyChecklist></MyChecklist>
                     </Col>
-                    <Col md={8}>
-                        <h5 className={'text-left'}>
+                    <Col  lg={true}>
+                        <h2 className={'text-left'}>
                             I migliori ristoranti di Frosinone
-                        </h5>
+                        </h2>
                         <MyCard></MyCard>
                     </Col>
-                </Row>
+                    </Row>
+             
             </Container>
         </>
     );
