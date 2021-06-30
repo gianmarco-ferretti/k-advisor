@@ -21,7 +21,7 @@ export default function MyCard() {
                         <Col className="col-8 ">
                             <Card.Body className="p-0">
                                 {/*   TODO GIANMARCO: mettere path dinamico con tilde e $*/}
-                                <Link to={{pathname: '/restaurant', state: {i}}}><Card.Title
+                                <Link to={{pathname: `/restaurant/${i}/`, state: {ristorante}}}><Card.Title
                                     className="text-start">{ristorante.name}</Card.Title></Link>
                                 <Card.Text className="d-flex mb-0">
                                     <MyRating score={ristorante.rating}/>

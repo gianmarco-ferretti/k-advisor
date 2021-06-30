@@ -19,9 +19,11 @@ store.dispatch(fetchRistoranti)
 
 store.dispatch(fetchCommenti('https://jsonplaceholder.typicode.com/users'))
 
+/*
 store.subscribe(function (){
     console.log('Subscribed state change!!!')
 })
+*/
 
 ReactDOM.render(
     <React.StrictMode>
