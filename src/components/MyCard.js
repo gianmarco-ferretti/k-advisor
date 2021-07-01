@@ -7,7 +7,7 @@ import MyRating from "./MyRating";
 import { GiKnifeFork } from "react-icons/gi"
 
 
-
+//TODO da usare Is_open per le variabili
 export default function MyCard() {
     const ristoranti = useSelector(state => state.ristoranti)
     //todo capire dove sono i commenti+ accoppiare commento a ristorante per metterli dentro la card
@@ -43,7 +43,6 @@ export default function MyCard() {
                                     <MyRating score={ristorante.rating}/>
                                     <span style= {{color:"grey"}} >{ristorante.num_reviews} recensioni
                                     <span >&nbsp; | &nbsp;</span>
-                                    {/*TODO GIANMARCO:  quando le renderemo globali prendere dati sul is_open*/}
                                     </span>
                                     <span className="d-flex ms-1 text-danger">Oggi chiuso</span>
                                 </Card.Text>

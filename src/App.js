@@ -7,7 +7,7 @@ import MyRestaurantList from "./components/MyRestaurantList";
 
 import MySingleRestaurant from './components/MySingleRestaurant';
 
-import {useSelector} from "react-redux";
+
 
 /*
 import MyChecklist from "./components/MyChecklist";

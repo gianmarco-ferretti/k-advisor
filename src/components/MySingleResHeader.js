@@ -14,9 +14,9 @@ export default function MySingleResHeader({ristorante}) {
  console.log(ristorante)
 
     function IsOpen(ristorante) {
-        if (ristorante.is_open == false) {
+        if (ristorante.is_open === false) {
             return "Chiuso";
-        } else if (ristorante.is_open == true) {
+        } else if (ristorante.is_open === true) {
             return "Aperto";
         }
     }

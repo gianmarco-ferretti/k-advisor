@@ -5,7 +5,7 @@ export default function MyRating({score}) {
     let roundedScore;
     let emptyScore;
 
-    if (score % 1 != 0) {
+    if (score % 1 !== 0) {
         isDecimal = 1;
         roundedScore = Math.floor(score);
         emptyScore = 5 - roundedScore - 1;

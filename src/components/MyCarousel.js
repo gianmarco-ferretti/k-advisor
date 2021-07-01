@@ -9,7 +9,7 @@ export default function MyCarousel({ ristorante }) {
     <Container>
       <Carousel id="Mycarousel">
         {photoarray.map((k, i) => (
-          <Carousel.Item>
+          <Carousel.Item key = {k}>
             <img
               id="carouselimage"
               className="d-block w-100"

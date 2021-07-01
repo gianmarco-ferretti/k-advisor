@@ -5,23 +5,23 @@ import {GiKnifeFork} from "react-icons/gi"
 
 export default function MyMenu({ ristorante }) {
   
-  
+  //todo formattazione grafica del menu + sezione commenti
 
-  if (ristorante.menu == undefined) {
+  if (ristorante.menu === undefined) {
     return <div></div>;
   } else console.log(ristorante.menu);
   return (
     <Container className={"mt-4"}>
       <Card>
         <Card.Header>
-          <p className="text-left">
+          <span className="text-left">
             {" "}
             <h4>Menu</h4>
-          </p>
+          </span>
         </Card.Header>  
         <Card.Body id="cardbody" className='row'>
           {ristorante.menu.map((k, i) => (
-            <Container id="menuboxtext" className='row' >   
+            <Container id="menuboxtext" className='row' key = {k}>   
               <div className="menudescription">
               <Col className='col-sm'>
                 <p className="text-left">
