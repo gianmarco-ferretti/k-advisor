@@ -1,6 +1,4 @@
-.App {
-    text-align: center;
-}
+
 
 .App-logo {
     height: 40vmin;
@@ -65,9 +63,19 @@
 
 /*Fine Gianmarco css*/
 /*Valerio css*/
+
+.Colimg{
+    height: 260px;
+    width: 250px;
+    
+    overflow: hidden;
+    
+}
+
+
 #Mycarousel{
-        margin-top: 2%;
-        max-height: 600px;
+        margin-top: 3%;
+        max-height: 500px;
         justify-content: center;
         overflow: hidden;
         
@@ -170,7 +178,15 @@
 }
 
 
-/*Inizio CSS Mirco*/
+/*Inizio CSS checklist*/
+
+
+#filCard{
+       
+        min-height: 280px;
+        min-width: 200px;
+        background-color: white;
+}
 .mostra {
     color: black;
     text-decoration: underline;

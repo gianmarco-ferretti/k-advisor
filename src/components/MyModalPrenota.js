@@ -9,6 +9,7 @@ export default function MyModalPrenota(props) {
                         Prenota ora il tuo ristorante
                     </Modal.Title>
                 </Modal.Header>
+                {/* TODO formattazzione grafica del modal */}
                 <Modal.Body>
                     <p>
                  Lorem ipsum

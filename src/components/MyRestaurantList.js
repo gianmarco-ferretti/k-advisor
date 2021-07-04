@@ -3,9 +3,7 @@ import MyChecklist from "./MyChecklist";
 import MyCard from "./MyCard";
 import React from "react";
 import MyListHeader from "./MyListHeader";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchCommenti} from "../actions";
-
+import {useSelector} from "react-redux";
 
 function MyRestaurantList() {
     const ristoranti = useSelector(state => state.ristoranti);
@@ -37,5 +35,4 @@ function MyRestaurantList() {
 }
 
 export default MyRestaurantList;
-
 

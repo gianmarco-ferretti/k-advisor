@@ -1,13 +1,8 @@
 import './App.css';
 import {BrowserRouter, Route} from 'react-router-dom';
-
 import MyNavbar from './components/MyNavbar';
-
 import MyRestaurantList from "./components/MyRestaurantList";
-
 import MySingleRestaurant from './components/MySingleRestaurant';
-import {useDispatch, useSelector} from "react-redux";
-import {fetchCommenti} from "./actions";
 import React from "react";
 
 
