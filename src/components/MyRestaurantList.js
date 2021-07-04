@@ -15,7 +15,7 @@ function MyRestaurantList() {
             <MyListHeader></MyListHeader>
             <Container className={'mt-3'}>
                 <Row className={'justify-content-center'}>
-                    <Col md={2} className={'mx-2'}>
+                    <Col md={2}>
                         <MyChecklist></MyChecklist>
                     </Col>
                     <Col md={9}>

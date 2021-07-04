@@ -1,5 +1,3 @@
-
-
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -61,18 +59,12 @@
     background: linear-gradient(90deg, #5DC7A0 50%, white 50%);
 }
 
-/*Fine Gianmarco css*/
-/*Valerio css*/
-
-.Colimg{
-    height: 260px;
-    width: 250px;
-    
-    overflow: hidden;
-    
+.separator{
+    padding-inline: 4px;
 }
 
-
+/*Fine Gianmarco css*/
+/*Valerio css*/
 #Mycarousel{
         margin-top: 3%;
         max-height: 500px;

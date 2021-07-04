@@ -12,19 +12,22 @@ function MyCardComments({ristorante}) {
 
     if (commenti[0] != undefined && commenti[1] != undefined) {
         return (
-            <>
-                <div>{commenti[0].name.substring(3)}</div>
-                <div>{commenti[1].name.substring(3)}</div>
-            </>
+            <span className={'text-black-50 font-weight-bold'}>
+                <div>"{commenti[0].name.substring(3)} "</div>
+                <div>"{commenti[1].name.substring(3)} "</div>
+            </span>
         )
     } else if (commenti[0] != undefined) {
         return (
-            <div>{commenti[0].name.substring(3)}</div>
-
+            <span className={'text-black-50 font-weight-bold'}>
+                <div>"{commenti[0].name.substring(3)} "</div>
+            </span>
         )
     } else {
         return (
-            <div>{ristorante.address_obj.city}</div>
+            <span className={'text-black-50 font-weight-bold'}>
+                <div>{ristorante.address_obj.city}</div>
+            </span>
         )
     }
 
