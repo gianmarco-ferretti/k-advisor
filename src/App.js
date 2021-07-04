@@ -6,23 +6,20 @@ import MyNavbar from './components/MyNavbar';
 import MyRestaurantList from "./components/MyRestaurantList";
 
 import MySingleRestaurant from './components/MySingleRestaurant';
-
-import {useSelector} from "react-redux";
-
-/*
-import MyChecklist from "./components/MyChecklist";
-import IntestazionePg2 from './components/IntestazionePg2';
-import IntestazionePg1 from './components/IntestazionePg1';
-import MyCard from './components/MyCard';
-*/
+import {useDispatch, useSelector} from "react-redux";
+import {fetchCommenti} from "./actions";
+import React from "react";
 
 
 function App() {
 
-    /*            const ristoranti = useSelector(state => state.ristoranti)
-                console.log(ristoranti)*/
-
-
+    /*TODO GIANMARCO: provare a metterli nel redux store correttamente
+      const ristoranti = useSelector(state => state.ristoranti);
+       const dispatch = useDispatch();
+       for (const ristorante of ristoranti) {
+           dispatch(fetchCommenti(ristorante.reviews_endpoint))
+       }
+   */
     return (
         <div className="App">
             <BrowserRouter>

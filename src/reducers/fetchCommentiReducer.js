@@ -1,12 +1,14 @@
-
-
 function fetchCommentiReducer(state = [], action) {
     switch (action.type) {
         case 'FETCH_COMMENTI':
-            return action.payload;
+            /*           return Object.assign(state, action.payload);*/
+            return {
+             /*   ...state, arr: [...state.arr, action.payload]*/
+            }
+
         default:
             return state;
     }
 }
 
-export default fetchCommentiReducer;    
+export default fetchCommentiReducer;

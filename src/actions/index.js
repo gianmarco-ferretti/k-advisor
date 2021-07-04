@@ -5,10 +5,14 @@ export const fetchRistoranti = async (dispatch) => {
     dispatch({type: 'FETCH_RISTORANTI', payload: response.data})
 }
 
+
 export const fetchCommenti = (apiURL) => {
-    return async function(dispatch){
-        const response = await axios.get(apiURL)
-        dispatch({type: 'FETCH_COMMENTI', payload: response.data})
+    return async function (dispatch) {
+        if (apiURL) {
+            const response = await axios.get(apiURL)
+            dispatch({type: 'FETCH_COMMENTI', payload: response.data})
+        }
     }
 }
 
+export const filterRistoranti = () => ({type: 'FILTER_RISTORANTI'})

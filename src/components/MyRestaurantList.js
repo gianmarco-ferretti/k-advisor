@@ -3,8 +3,15 @@ import MyChecklist from "./MyChecklist";
 import MyCard from "./MyCard";
 import React from "react";
 import MyListHeader from "./MyListHeader";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchCommenti} from "../actions";
+
 
 function MyRestaurantList() {
+    const ristoranti = useSelector(state => state.ristoranti);
+
+
+
     return (
         <>
             <MyListHeader></MyListHeader>
@@ -13,11 +20,15 @@ function MyRestaurantList() {
                     <Col md={2} className={'mx-2'}>
                         <MyChecklist></MyChecklist>
                     </Col>
-                    <Col md={8}>
+                    <Col md={9}>
                         <h5 className={'text-left'}>
                             I migliori ristoranti di Frosinone
                         </h5>
-                        <MyCard></MyCard>
+                        <Container fluid={'ListaRistoranti'}>
+                            {ristoranti.map((ristorante, i) =>
+                                <MyCard ristorante={ristorante} key={i}></MyCard>
+                            )}
+                        </Container>
                     </Col>
                 </Row>
             </Container>
@@ -26,4 +37,5 @@ function MyRestaurantList() {
 }
 
 export default MyRestaurantList;
+
 

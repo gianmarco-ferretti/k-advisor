@@ -1,7 +1,10 @@
 import React from 'react'
 import {Form, Col, Row} from 'react-bootstrap'
+import {useDispatch} from "react-redux";
+import {filterRistoranti} from "../actions";
 
 export default function MyChecklist() {
+
 
     return (
         <div id="filCard" className="ml-4">
@@ -11,22 +14,17 @@ export default function MyChecklist() {
                 </Row>
                 <Row>
                     <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Ristoranti"/>
-                    </Form.Group>
-                </Row>
-                <Row>
-                    <Form.Group controlId="formBasicCheckbox1">
-                        <Form.Check type="checkbox" label="Ristoranti senza servizio al tavolo"/>
+                        <Form.Check type="checkbox" label="Ristoranti" onClick={()=>filterRistoranti}/>
                     </Form.Group>
                 </Row>
                 <Row>
                     <Form.Group controlId="formBasicCheckbox2">
-                        <Form.Check type="checkbox" label="Pasticcerie e gelaterie"/>
+                        <Form.Check type="checkbox" label="Pasticcerie"/>
                     </Form.Group>
                 </Row>
                 <Row>
                     <Form.Group controlId="formBasicCheckbox3">
-                        <Form.Check type="checkbox" label="Caffè e tè"/>
+                        <Form.Check type="checkbox" label="Caffetterie"/>
                     </Form.Group>
                 </Row>
                 <Row>

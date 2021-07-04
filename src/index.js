@@ -11,19 +11,13 @@ import {fetchCommenti, fetchRistoranti} from "./actions";
 import thunk from "redux-thunk";
 
 const composedEnhancer = compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
-
 const store = createStore(allReducers, composedEnhancer);
 
 store.dispatch(fetchRistoranti)
 
-store.dispatch(fetchCommenti('https://jsonplaceholder.typicode.com/users'))
 
-/*
-store.subscribe(function (){
-    console.log('Subscribed state change!!!')
-})
-*/
+
+
 
 ReactDOM.render(
     <React.StrictMode>
