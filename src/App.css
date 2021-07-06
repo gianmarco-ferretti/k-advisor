@@ -68,6 +68,38 @@
 /*Fine Gianmarco css*/
 /*Valerio css*/
 
+::placeholder{
+    color: black;
+    opacity: 1;
+}
+
+.modalinput{
+    border:none;
+    border-bottom: 2px solid black;
+}
+
+
+
+
+#modaldate{
+    max-width: 90px;
+}
+#modaltime{
+    max-width: 55px;
+}
+#modalperson {
+        max-width: 60px;
+}
+#searchbar{
+    background-position: left;
+    background-size: contain;   
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-image: url('img/500px-Search_Icon.svg.png');
+    padding-left: 30px;
+
+}
+
 #containerforlist{
     display: flex;
     justify-content: center ;

@@ -2,14 +2,14 @@ import React from 'react'
 import {Navbar, Form, Button, Container, Col} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import  {useState} from 'react'
-import {createStore} from 'redux'
 
-let store = createStore() // non ha un reducer, porcaccio
+
+
 
 
 export default function MyNavbar() {
     const [keyword,setKeyword] = useState()
-    store.subscribe(() =>console.log(store.getState()));
+   
     return (
         <Container fluid={'p-0'} id='NavContainer'>
             <Navbar bg="light" epand="true">
@@ -24,7 +24,7 @@ export default function MyNavbar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Col>
                     <Form inline>
-                        <input type="text" id="searchbar" placeholder="Search" className="NavSearch" size='sm' onChange={(e) => setKeyword(e.target.value)}/>
+                        <input  type="text" id="searchbar" placeholder="Search" className="NavSearch" size='sm' onChange={(e) => setKeyword(e.target.value)}/>
                     </Form>
                 </Col>
                 <Col>
