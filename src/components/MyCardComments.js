@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
-function MyCardComments({ristorante}) {
-    /*TODO GIANMARCO: provare a metterli nel redux store correttamente*/
-
+export default function MyCardComments({ristorante}) {
     let [commenti, setCommenti] = useState({commmenti: []});
 
     useEffect(() => {
@@ -30,8 +28,4 @@ function MyCardComments({ristorante}) {
             </span>
         )
     }
-
-
 }
-
-export default MyCardComments;

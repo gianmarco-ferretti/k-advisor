@@ -3,9 +3,7 @@ import {useDispatch} from "react-redux";
 import {removeAllFilter} from "../actions";
 
 function MyInfoChecklist(props) {
-
     const dispatch = useDispatch();
-
 
     return (
         <div className={'mt-5'}>

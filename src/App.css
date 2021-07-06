@@ -2,7 +2,6 @@
     height: 40vmin;
     pointer-events: none;
 }
-
 /*Gianmarco css*/
 #Intestazione-container {
     position: relative;
@@ -168,13 +167,8 @@
         transform: rotate(360deg);
     }
 }
-
-
 /*Inizio CSS checklist*/
-
-
 #filCard{
-       
         min-height: 280px;
         min-width: 200px;
         background-color: white;

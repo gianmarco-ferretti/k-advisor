@@ -15,10 +15,6 @@ const store = createStore(allReducers, composedEnhancer);
 
 store.dispatch(fetchRistoranti)
 
-
-
-
-
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
