@@ -12,13 +12,14 @@ function MyRestaurantList() {
 
     return (
         <>
+
             <MyListHeader></MyListHeader>
-            <Container className={'mt-3'}>
-                <Row className={'justify-content-center'}>
-                    <Col md={2}>
+            
+                    <div id = "containerforlist">
+                        <div id ="checklist">
                         <MyChecklist></MyChecklist>
-                    </Col>
-                    <Col md={9}>
+                        </div>
+                        <div id = "card">
                         <h5 className={'text-left'}>
                             I migliori ristoranti di Frosinone
                         </h5>
@@ -27,11 +28,13 @@ function MyRestaurantList() {
                                 <MyCard ristorante={ristorante} key={i}></MyCard>
                             )}
                         </Container>
-                    </Col>
-                </Row>
-            </Container>
+                        </div>
+                        </div>
+                    
+                
+           
         </>
-    );
+    );  
 }
 
 export default MyRestaurantList;

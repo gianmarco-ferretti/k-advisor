@@ -36,8 +36,10 @@
 
 #img {
     background-color: #282c34;
-    min-height: 100%;
-    min-width: 100%;
+    min-height: 250px;
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 250px;
 }
 
 [class*='rating']{
@@ -65,6 +67,22 @@
 
 /*Fine Gianmarco css*/
 /*Valerio css*/
+
+#containerforlist{
+    display: flex;
+    justify-content: center ;
+}
+#checklist{
+    max-width: 300px;
+    margin-left: 20px;
+    margin-right: 70px;
+}
+
+#card{
+    max-width: 900px;
+    min-width: 900px;
+}
+
 #Mycarousel{
         margin-top: 3%;
         max-height: 500px;
@@ -72,14 +90,14 @@
         overflow: hidden;
         
 }
-#menuboxtext{
+/* #menuboxtext{
         display:flex;
         flex-direction: row;
-}
-#cardbody {
+} */
+/* #cardbody {
         display: flex;
         flex-direction:row ;
-}
+} */
 #cardbody a{
     font-size: small;
 }
