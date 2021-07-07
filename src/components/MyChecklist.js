@@ -15,17 +15,17 @@ export default function MyChecklist() {
     }
 
     return (
-        <Container id="filCard">
-            <Row className={'pt-2'}>
+        <Container className="bg-white mb-3">
+            <Row className={'py-2'}>
                 <Col>
                     <h5><strong>Categoria</strong></h5>
                     <Form.Check type="checkbox" name="restaurant" label="Ristoranti" onChange={handleClick}/>
                     <Form.Check type="checkbox" name="pastry" label="Pasticcerie e gelaterie" onChange={handleClick}/>
                     <Form.Check type="checkbox" name="cafe" label="Caffè e tè" onChange={handleClick}/>
-                    <a href="#" className="mostra"><strong>Mostra di più</strong></a>
+                    <a href="#" className="text-body mostra-underlined"><strong>Mostra di più</strong></a>
                     <hr></hr>
                     <h5><strong>Prenotazioni</strong></h5>
-                    <Form.Check type="checkbox" label="Prenotazione online"/>
+                    <Form.Check type="checkbox" label="Prenotazione online" onChange={handleClick}/>
                 </Col>
             </Row>
         </Container>

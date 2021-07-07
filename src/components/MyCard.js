@@ -5,6 +5,7 @@ import MyModalPrenota from "./MyModalPrenota";
 import MyRating from "./MyRating";
 import {GiKnifeFork} from "react-icons/gi"
 import MyCardComments from "./MyCardComments";
+import MyPreferiti from "./MyPreferitiIcon";
 
 
 //TODO da usare Is_open per le variabili
@@ -23,9 +24,11 @@ export default function MyCard({ristorante}) {
                 </Col>
                 <Col xs={12} lg={8}>
                     <Card.Body className="p-2">
-                        <Link to={{pathname: `/restaurant/${ristorante.location_id}/`, state: {ristorante}}}><Card.Title
-                            className="text-start text-body"><h4><strong>{ristorante.name}</strong></h4>
-                        </Card.Title></Link>
+                        <MyPreferiti ristorante={ristorante}/>
+                        <Link to={{pathname: `/restaurant/${ristorante.location_id}/`, state: {ristorante}}}>
+                            <Card.Title
+                                className="text-start text-body"><h4><strong>{ristorante.name}</strong></h4>
+                            </Card.Title></Link>
                         <Card.Text className="d-flex mb-0">
                             <MyRating score={ristorante.rating}/>
                             <span

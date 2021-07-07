@@ -7,8 +7,6 @@ import {useSelector} from "react-redux";
 import MyInfoChecklist from "./MyInfoChecklist";
 
 function MyRestaurantList() {
-
-
     const ristoranti = useSelector(state => state.ristoranti);
     const filtri = useSelector(state => state.filtri);
     const searchvalue = useSelector(state => state.searchvalue)
@@ -19,28 +17,23 @@ function MyRestaurantList() {
 
 
     let k = Object.keys(searchvalue).length
-    
-    let Truesearchvalue = searchvalue[k-1]
-    
-    const sFilRes =[];
-     ristoranti.map((ristorante) => {
-         if(Truesearchvalue == "" || Truesearchvalue == undefined) {
-             return ristorante;
-         }  else if (ristorante.name.toLowerCase().includes(Truesearchvalue)) {
-             sFilRes.push(ristorante)
-     }
-     })
-    
-    
-    return (
-    <>
 
+    let Truesearchvalue = searchvalue[k - 1]
+
+    const sFilRes = [];
+    ristoranti.map((ristorante) => {
+        if (Truesearchvalue == "" || Truesearchvalue == undefined) {
+            return ristorante;
+        } else if (ristorante.name.toLowerCase().includes(Truesearchvalue)) {
+            sFilRes.push(ristorante)
+        }
+    })
+
+
+    return (
+        <>
             <MyListHeader></MyListHeader>
-            
-                
-                    
             <Container className={'mt-3'}>
-                
 
                 <Row className={'justify-content-center'}>
                     <Col className={'col-12 col-lg-3'}> {/* TODO provare lg={3}*/}
@@ -52,19 +45,15 @@ function MyRestaurantList() {
                         <Container fluid={'ListaRistoranti'}>
                             {((rFiltrati.length < 1) && (sFilRes.length < 1)) ? ristoranti.map((ristorante, i) =>
                                 <MyCard ristorante={ristorante} key={i}></MyCard>
-                            ) :rFiltrati.map((ristorante, i) =>
+                            ) : rFiltrati.map((ristorante, i) =>
                                 <MyCard ristorante={ristorante} key={i}></MyCard>
                             )}
-
-                            </Container>
-                            </Col>
-                            </Row>
                         </Container>
-                     
-                
-           </>
-       
-    );  
+                    </Col>
+                </Row>
+            </Container>
+        </>
+    );
 }
 
 export default MyRestaurantList;

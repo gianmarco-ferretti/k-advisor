@@ -34,10 +34,9 @@
 }
 
 #img {
+    object-fit: cover;
     background-color: #282c34;
     min-height: 250px;
-    min-width: 300px;
-    max-width: 300px;
     max-height: 250px;
 }
 
@@ -64,6 +63,21 @@
     padding-inline: 4px;
 }
 
+[class*='btn-preferiti']{
+    position: absolute;
+    color: black;
+    top: 5px;
+    right: 20px;
+    transition: 0.3s;
+}
+
+.btn-preferiti:hover{
+    color: red;
+}
+
+.btn-preferiti-red{
+    color: red;
+}
 /*Fine Gianmarco css*/
 /*Valerio css*/
 
@@ -76,8 +90,6 @@
     border:none;
     border-bottom: 2px solid black;
 }
-
-
 
 
 #modaldate{
@@ -163,29 +175,20 @@
     align-items: flex-start
 }
 
-#NavContainer {
-    border-bottom: 2px solid rgb(0, 0, 0);
-}
 
 .NavEnterBtn {
     border-radius: 35%;
     background-color: black;
 }
 
+/*
+TODO si può fare solo con bootstrap
 .NavSearch {
     border-radius: 5%;
     transition: none;
     border-color: black;
 
-}
-
-#Advisor {
-    font-weight: bold;
-}
-
-.form-inline:active {
-    border-style: none;
-}
+}*/
 
 /*Fine css Vale*/
 @media (prefers-reduced-motion: no-preference) {
@@ -217,19 +220,8 @@
         transform: rotate(360deg);
     }
 }
-/*Inizio CSS checklist*/
-#filCard{
-        min-height: 280px;
-        min-width: 200px;
-        background-color: white;
-}
-.mostra {
-    color: black;
-    text-decoration: underline;
-}
-
-.mostra:hover {
-    color: rgb(117, 117, 117);
+/*Inizio CSS Mirco*/
+.mostra-underlined{
     text-decoration: underline;
 }
 /*Fine CSS Mirco*/

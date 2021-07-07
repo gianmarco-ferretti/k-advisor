@@ -17,6 +17,18 @@ export const removeAllFilter = () => {
     return {type: 'REMOVE_ALL_FILTER'}
 }
 
+export const login = () => {
+    return {type: 'LOGIN'}
+}
+
+export const addRistorante = (ristorante) => {
+    return {type: 'ADD_RISTORANTE', payload: ristorante}
+}
+
+export const removeRistorante = (ristorante) => {
+    return {type: 'REMOVE_RISTORANTE', payload: ristorante}
+}
+
 export const addSearch = (searchterm) => {
         return {type : 'ADD_SEARCH' , payload:searchterm}
 }
