@@ -9,23 +9,20 @@ import MyCardComments from "./MyCardComments";
 
 //TODO da usare Is_open per le variabili
 export default function MyCard({ristorante}) {
-
     const [modalShow, setModalShow] = React.useState(false); //popup
-
 
     function DollarToEuros(string) {
         return (string.replaceAll("$", "€"));
     }
 
-
     return (
-        <Card className={'my-3'}>
+        <Card className={'my-3 overflow-hidden'}>
             <Row>
-                <Col className="col-4 p-0">
+                <Col xs={12} lg={4} className="p-0">
                     <Card.Img id="img" src={ristorante.photos[0]}/>
                 </Col>
-                <Col className="col-8 ">
-                    <Card.Body className="p-0">
+                <Col xs={12} lg={8}>
+                    <Card.Body className="p-2">
                         <Link to={{pathname: `/restaurant/${ristorante.location_id}/`, state: {ristorante}}}><Card.Title
                             className="text-start text-body"><h4><strong>{ristorante.name}</strong></h4>
                         </Card.Title></Link>

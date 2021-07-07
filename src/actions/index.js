@@ -5,14 +5,14 @@ export const fetchRistoranti = async (dispatch) => {
     dispatch({type: 'FETCH_RISTORANTI', payload: response.data})
 }
 
-
-export const fetchCommenti = (apiURL) => {
-    return async function (dispatch) {
-        if (apiURL) {
-            const response = await axios.get(apiURL)
-            dispatch({type: 'FETCH_COMMENTI', payload: response.data})
-        }
-    }
+export const addFilter = (categoria) => {
+    return {type: 'ADD_FILTER', payload: categoria}
 }
 
-export const filterRistoranti = () => ({type: 'FILTER_RISTORANTI'})
+export const removeFilter = (categoria) => {
+    return {type: 'REMOVE_FILTER', payload: categoria}
+}
+
+export const removeAllFilter = () => {
+    return {type: 'REMOVE_ALL_FILTER'}
+}
