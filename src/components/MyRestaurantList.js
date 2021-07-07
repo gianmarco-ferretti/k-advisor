@@ -8,34 +8,30 @@ import MyInfoChecklist from "./MyInfoChecklist";
 
 function MyRestaurantList() {
 
-//prende i pezzi di state che gli servono
 
     const ristoranti = useSelector(state => state.ristoranti);
     const filtri = useSelector(state => state.filtri);
-    const searchvalue = useSelector(state => state.searchvalue)[0]
+    const searchvalue = useSelector(state => state.searchvalue)
 
-    //fa la logica
 
     const rFiltrati = [];
     ristoranti.map((ristorante) => (filtri.includes(ristorante.category.name) ? rFiltrati.push(ristorante) : null))
 
 
-    console.log(searchvalue)
-
-    //controllare il tipo di searchvalue to lower case vede solo stringhe
-    const Sfiltered =[];
-    ristoranti.filter((val)=> {  
-        if(searchvalue == "") {
-            Sfiltered.push(val)
-        }   else if (val.toLowerCase().includes(searchvalue.toLowerCase())) {
-            Sfiltered.push(val)
-        }   else if (searchvalue == undefined) {
-            return null
-        }
-    })
-
- console.log(Sfiltered)
-
+    let k = Object.keys(searchvalue).length
+    
+    let Truesearchvalue = searchvalue[k-1]
+    
+    const sFilRes =[];
+     ristoranti.map((ristorante) => {
+         if(Truesearchvalue == "" || Truesearchvalue == undefined) {
+             return ristorante;
+         }  else if (ristorante.name.toLowerCase().includes(Truesearchvalue)) {
+             sFilRes.push(ristorante)
+     }
+     })
+    
+    
     return (
     <>
 
@@ -54,9 +50,9 @@ function MyRestaurantList() {
                         <h5 className={'text-left'}>I migliori ristoranti di Frosinone</h5>
                         <MyInfoChecklist props={rFiltrati.length}></MyInfoChecklist>
                         <Container fluid={'ListaRistoranti'}>
-                            {(rFiltrati.length < 1) ? ristoranti.map((ristorante, i) =>
+                            {((rFiltrati.length < 1) && (sFilRes.length < 1)) ? ristoranti.map((ristorante, i) =>
                                 <MyCard ristorante={ristorante} key={i}></MyCard>
-                            ) : rFiltrati.map((ristorante, i) =>
+                            ) :rFiltrati.map((ristorante, i) =>
                                 <MyCard ristorante={ristorante} key={i}></MyCard>
                             )}
 

@@ -20,3 +20,6 @@ export const removeAllFilter = () => {
 export const addSearch = (searchterm) => {
         return {type : 'ADD_SEARCH' , payload:searchterm}
 }
+export const removeAllSearch =  () => {
+        return {type :"REMOVE_ALL_SEARCH"}
+}

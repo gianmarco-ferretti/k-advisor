@@ -37,9 +37,8 @@ export default function MyModalPrenota(props) {
             <Col className>
               <AiFillCalendar style={{ color: "green" }}></AiFillCalendar>
               <br></br>
-              
-
-              <input type="text" id="modaldate" placeholder={today} className="modalinput" />
+              <input type="text" class="form-control" placeholder="Inserisci Data di Nascita" name="dataNascita"
+                       onfocus="(this.type='date')" onblur="(this.type='text')" required/>
             </Col>
 
             <Col className>

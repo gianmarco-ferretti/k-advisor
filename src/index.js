@@ -15,7 +15,6 @@ const composedEnhancer = compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS
 const store = createStore(allReducers, composedEnhancer);
 
 store.dispatch(fetchRistoranti)
-console.log(store.getState())
 
 ReactDOM.render(
     <React.StrictMode>
