@@ -7,12 +7,24 @@ import {useSelector} from "react-redux";
 import MyInfoChecklist from "./MyInfoChecklist";
 
 function MyRestaurantList() {
+
+//prende i pezzi di state che gli servono
+
     const ristoranti = useSelector(state => state.ristoranti);
     const filtri = useSelector(state => state.filtri);
+    const searchvalue = useSelector(state => state.searchvalue)
+
+    //fa la logica
 
     const rFiltrati = [];
     ristoranti.map((ristorante) => (filtri.includes(ristorante.category.name) ? rFiltrati.push(ristorante) : null))
 
+
+    console.log(searchvalue)
+
+    //manca la logica per la searchbar, ma ho tutti i componenti (quella me la studio succesivamente)
+    
+    
     return (
     <>
 

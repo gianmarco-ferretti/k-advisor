@@ -16,3 +16,7 @@ export const removeFilter = (categoria) => {
 export const removeAllFilter = () => {
     return {type: 'REMOVE_ALL_FILTER'}
 }
+
+export const addSearch = (searchterm) => {
+        return {type : 'ADD_SEARCH' , payload:searchterm}
+}
