@@ -36,6 +36,7 @@ export default function MyModalPrenota(props) {
           <Row className={" text-center"}>
             <Col className>
               <AiFillCalendar style={{ color: "green" }}></AiFillCalendar>
+              {/* TODO sistemare la data e l'orologio */}
               <br></br>
               <input type="text" class="form-control" placeholder="Inserisci Data di Nascita" name="dataNascita"
                        onfocus="(this.type='date')" onblur="(this.type='text')" required/>
