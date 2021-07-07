@@ -12,7 +12,7 @@ function MyRestaurantList() {
 
     const ristoranti = useSelector(state => state.ristoranti);
     const filtri = useSelector(state => state.filtri);
-    const searchvalue = useSelector(state => state.searchvalue)
+    const searchvalue = useSelector(state => state.searchvalue)[0]
 
     //fa la logica
 
@@ -22,9 +22,20 @@ function MyRestaurantList() {
 
     console.log(searchvalue)
 
-    //manca la logica per la searchbar, ma ho tutti i componenti (quella me la studio succesivamente)
-    
-    
+    //controllare il tipo di searchvalue to lower case vede solo stringhe
+    const Sfiltered =[];
+    ristoranti.filter((val)=> {  
+        if(searchvalue == "") {
+            Sfiltered.push(val)
+        }   else if (val.toLowerCase().includes(searchvalue.toLowerCase())) {
+            Sfiltered.push(val)
+        }   else if (searchvalue == undefined) {
+            return null
+        }
+    })
+
+ console.log(Sfiltered)
+
     return (
     <>
 
@@ -33,6 +44,7 @@ function MyRestaurantList() {
                 
                     
             <Container className={'mt-3'}>
+                
 
                 <Row className={'justify-content-center'}>
                     <Col className={'col-12 col-lg-3'}> {/* TODO provare lg={3}*/}
