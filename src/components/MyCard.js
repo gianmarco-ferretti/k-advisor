@@ -9,9 +9,9 @@ import MyCardComments from "./MyCardComments";
 
 //TODO da usare Is_open per le variabili
 export default function MyCard({ristorante}) {
-    const [modalShow, setModalShow] = React.useState(false); //popup
+    const [modalShow, setModalShow] = React.useState(false);
 
-    function DollarToEuros(string) {
+    function dollarToEuros(string) {
         return (string.replaceAll("$", "€"));
     }
 
@@ -38,9 +38,8 @@ export default function MyCard({ristorante}) {
                             <span>{ristorante.category.localized_name}</span>
                             <span className={'separator font-weight-bolder'}>|</span>
                             <span className="ms-1"
-                                  id={'fascia_di_prezzo'}>{DollarToEuros(ristorante.price_level)}</span>
+                                  id={'fascia_di_prezzo'}>{dollarToEuros(ristorante.price_level)}</span>
                             <span className={'separator font-weight-bolder'}>|</span>
-                            {/*TODO cambiare icona, prendere quella del design*/}
                             <span className="separator text-body"><GiKnifeFork/></span>
                             <span>Menù</span>
                         </Card.Text>

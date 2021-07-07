@@ -8,13 +8,6 @@ import React from "react";
 
 function App() {
 
-    /*TODO GIANMARCO: provare a metterli nel redux store correttamente come alterantiva allo useEffct locale
-      const ristoranti = useSelector(state => state.ristoranti);
-       const dispatch = useDispatch();
-       for (const ristorante of ristoranti) {
-           dispatch(fetchCommenti(ristorante.reviews_endpoint))
-       }
-   */
     return (
         <div className="App">
             <BrowserRouter>

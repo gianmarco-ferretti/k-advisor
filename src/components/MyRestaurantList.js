@@ -10,12 +10,8 @@ function MyRestaurantList() {
     const ristoranti = useSelector(state => state.ristoranti);
     const filtri = useSelector(state => state.filtri);
 
-
     const rFiltrati = [];
-
     ristoranti.map((ristorante) => (filtri.includes(ristorante.category.name) ? rFiltrati.push(ristorante) : null))
-
-
 
     return (
         <>
