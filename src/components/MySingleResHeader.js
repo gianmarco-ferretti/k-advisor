@@ -9,21 +9,9 @@ import {Container, Row} from "react-bootstrap";
 import MyRating from "./MyRating";
 
 
-
 export default function MySingleResHeader({ristorante}) {
- console.log(ristorante)
 
-    function IsOpen(ristorante) {
-        if (ristorante.is_open === false) {
-            return "Chiuso";
-        } else if (ristorante.is_open === true) {
-            return "Aperto";
-        }
-    }
-
-
-    let open = IsOpen(ristorante);
-
+    /*TODO migliorare resa grafica, prendere spunto da MyCard*/
     return (
         <Container fluid className={"bg-white"} id={"IntestazioneSingle-container"}>
             <Row className={"justify-content-left  intestazione"}>
@@ -32,7 +20,7 @@ export default function MySingleResHeader({ristorante}) {
             <Row className={"justify-content-left  intestazione"}>
                 <MyRating score={ristorante.rating}/>
                 <a>{ristorante.num_reviews}</a>
-                <a> |{ristorante.price_level}</a>
+                <a> |{ristorante.price_level.replaceAll("$", "€")}</a>
             </Row>
             <Row className={"justify-content-left  intestazione"}>
         <span>
@@ -41,12 +29,14 @@ export default function MySingleResHeader({ristorante}) {
             {ristorante.address_obj.city}{" "}
             {ristorante.address_obj.country}{" "}
         </a>
-
         <a> | <FiPhone/> {ristorante.phone}</a>
         <a> | <GrPersonalComputer/>  sito web</a>
         <a> | <GiKnifeFork/>  Menù </a>
-        <a> | <AiOutlineClockCircle/> {open} </a>
-
+            {(ristorante.is_open) ?
+                <a> | <AiOutlineClockCircle/><span className={'text-black font-weight-bold'}> Aperto Ora</span></a>
+                :
+                <a> | <AiOutlineClockCircle/><span
+                    className={'text-danger font-weight-bold'}> Oggi Chiuso</span></a>}
         </span>
             </Row>
         </Container>

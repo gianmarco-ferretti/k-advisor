@@ -1,7 +1,7 @@
 import React from "react";
 import {Form, Col, Row, Container} from "react-bootstrap";
 import {useDispatch} from "react-redux";
-import {addFilter, removeFilter} from "../actions";
+import {addFilter, removeAllSearch, removeFilter} from "../actions";
 
 export default function MyChecklist() {
     const dispatch = useDispatch();
@@ -9,7 +9,8 @@ export default function MyChecklist() {
     const handleClick = (e) => {
         if (e.target.checked) {
             dispatch(addFilter(e.target.name))
-        }else {
+            dispatch(removeAllSearch(e.target.value))
+        } else {
             dispatch(removeFilter(e.target.name))
         }
     }
@@ -25,7 +26,7 @@ export default function MyChecklist() {
                     <a href="#" className="text-body mostra-underlined"><strong>Mostra di più</strong></a>
                     <hr></hr>
                     <h5><strong>Prenotazioni</strong></h5>
-                    <Form.Check type="checkbox" label="Prenotazione online" onChange={handleClick}/>
+                    <Form.Check type="checkbox" name="true" label="Prenotabile" onChange={handleClick}/>
                 </Col>
             </Row>
         </Container>

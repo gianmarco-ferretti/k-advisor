@@ -2,6 +2,10 @@ import { Button, Modal, Col, Row } from "react-bootstrap";
 import { BsFillPersonFill } from "react-icons/bs";
 import { BsFillClockFill } from "react-icons/bs";
 import { AiFillCalendar } from "react-icons/ai";
+
+
+/*TODO Gianmarco, rifare totalmente con hook form*/
+
 //gestione data e ora
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, "0");
@@ -35,7 +39,7 @@ export default function MyModalPrenota(props) {
         <Modal.Body>
           <Row className={" text-center"}>
             <Col className>
-              <AiFillCalendar style={{ color: "green" }}></AiFillCalendar>
+              <AiFillCalendar className={'my-modal-icon'} ></AiFillCalendar>
               {/* TODO sistemare la data e l'orologio */}
               <br></br>
               <input type="text" class="form-control" placeholder="Inserisci Data di Nascita" name="dataNascita"
@@ -43,13 +47,13 @@ export default function MyModalPrenota(props) {
             </Col>
 
             <Col className>
-              <BsFillClockFill style={{ color: "green" }}></BsFillClockFill>
+              <BsFillClockFill className={'my-modal-icon'} ></BsFillClockFill>
               <br></br>
              
               <input type="text" id="modaltime" placeholder={time} className="modalinput" />
             </Col>
             <Col className>
-              <BsFillPersonFill style={{ color: "green" }}></BsFillPersonFill>
+              <BsFillPersonFill className={'my-modal-icon'} ></BsFillPersonFill>
               
               <br></br>
               <input type="text" id="modalperson" placeholder="2 ospiti" className="modalinput" />

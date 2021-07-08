@@ -5,6 +5,7 @@ import MyRestaurantList from "./components/MyRestaurantList";
 import MySingleRestaurant from './components/MySingleRestaurant';
 import React from "react";
 import MyPreferiti from "./components/MyPreferitiList";
+import MyPrenotazioni from "./components/MyPrenotazioni";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/restaurant/:id/" exact component={MySingleRestaurant}/>
                 <Route path="/" exact component={MyRestaurantList}/>
                 <Route path="/preferiti/" exact component={MyPreferiti}/>
+                <Route path="/prenotazioni/" exact component={MyPrenotazioni}/>
             </BrowserRouter>
         </div>
     );

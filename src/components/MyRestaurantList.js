@@ -9,32 +9,36 @@ import MyInfoChecklist from "./MyInfoChecklist";
 function MyRestaurantList() {
     const ristoranti = useSelector(state => state.ristoranti);
     const filtri = useSelector(state => state.filtri);
-    const searchvalue = useSelector(state => state.searchvalue)
-
+    const searchValue = useSelector(state => state.searchValue).toString().toLowerCase();
 
     const rFiltrati = [];
     ristoranti.map((ristorante) => (filtri.includes(ristorante.category.name) ? rFiltrati.push(ristorante) : null))
+    ristoranti.map((ristorante) => (filtri.includes(ristorante.can_book + "") ? rFiltrati.push(ristorante) : null))
+    ristoranti.map((ristorante) => (ristorante.name.toLowerCase().includes(searchValue) && searchValue != "") ? rFiltrati.push(ristorante) : null)
 
 
-    let k = Object.keys(searchvalue).length
+    /* TODO, far vedere a Valerio le differenze con il suo vecchio codice*/
 
-    let Truesearchvalue = searchvalue[k - 1]
+    /*        let k = Object.keys(searchValue).length
 
-    const sFilRes = [];
-    ristoranti.map((ristorante) => {
-        if (Truesearchvalue == "" || Truesearchvalue == undefined) {
-            return ristorante;
-        } else if (ristorante.name.toLowerCase().includes(Truesearchvalue)) {
-            sFilRes.push(ristorante)
-        }
-    })
+            let trueSearchValue = searchValue[k - 1]
+
+
+            const sFilRes = [];
+            ristoranti.map((ristorante) => {
+                if (trueSearchValue == "" || trueSearchValue == undefined) {
+                    return ristorante;
+                } else if (ristorante.name.toLowerCase().includes(trueSearchValue)) {
+                    rFiltrati.push(ristorante)
+                    console.log(sFilRes)
+                }
+            })*/
 
 
     return (
         <>
             <MyListHeader></MyListHeader>
             <Container className={'mt-3'}>
-
                 <Row className={'justify-content-center'}>
                     <Col className={'col-12 col-lg-3'}> {/* TODO provare lg={3}*/}
                         <MyChecklist></MyChecklist>
@@ -43,7 +47,7 @@ function MyRestaurantList() {
                         <h5 className={'text-left'}>I migliori ristoranti di Frosinone</h5>
                         <MyInfoChecklist props={rFiltrati.length}></MyInfoChecklist>
                         <Container fluid={'ListaRistoranti'}>
-                            {((rFiltrati.length < 1) && (sFilRes.length < 1)) ? ristoranti.map((ristorante, i) =>
+                            {((rFiltrati.length < 1)) ? ristoranti.map((ristorante, i) =>
                                 <MyCard ristorante={ristorante} key={i}></MyCard>
                             ) : rFiltrati.map((ristorante, i) =>
                                 <MyCard ristorante={ristorante} key={i}></MyCard>

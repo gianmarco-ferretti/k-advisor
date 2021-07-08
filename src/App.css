@@ -1,8 +1,4 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-/*Gianmarco css*/
+/*Inizio css Gianmarco*/
 #Intestazione-container {
     position: relative;
     min-height: 150px;
@@ -13,45 +9,47 @@
     bottom: 20px;
 }
 
-.modal-backdrop{
+.modal-backdrop {
     background-color: rgba(0, 0, 0, 0.2) !important;
 
 }
 
-.modal-content{
+.modal-content {
     border-color: white !important;
     border-radius: 25px !important;
 }
 
-.my-modal-shadow{
+.my-modal-shadow {
     background-color: #fff;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
-    -webkit-box-shadow: rgba(0,0,0,0.2) 0px 0 10px;
-    -moz-box-shadow: rgba(0,0,0,0.2) 0 0 10px;
-    box-shadow: rgba(0,0,0,0.2) 0 0 10px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
 }
 
 #img {
     object-fit: cover;
     background-color: #282c34;
+    min-width: 100%;
     min-height: 250px;
     max-height: 250px;
 }
 
-[class*='rating']{
+[class*='rating'] {
     border: 1px solid #5DC7A0;
     width: 16px;
     height: 16px;
     border-radius: 50%;
     margin-right: 2px;
 }
+
 .empty-rating {
 
 }
 
-.full-rating{
+.full-rating {
     background-color: #5DC7A0;
 }
 
@@ -59,11 +57,11 @@
     background: linear-gradient(90deg, #5DC7A0 50%, white 50%);
 }
 
-.separator{
+.separator {
     padding-inline: 4px;
 }
 
-[class*='btn-preferiti']{
+[class*='btn-preferiti'] {
     position: absolute;
     color: black;
     top: 5px;
@@ -71,80 +69,99 @@
     transition: 0.3s;
 }
 
-.btn-preferiti:hover{
+.btn-preferiti:hover {
     color: red;
 }
 
-.btn-preferiti-red{
+.btn-preferiti-red {
     color: red;
 }
-/*Fine Gianmarco css*/
-/*Valerio css*/
 
-::placeholder{
+.my-modal-icon {
+    color: #5DC7A0;
+}
+
+.my-btn{
+    border-radius: 20px !important;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.my-carousel-img{
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+    .my-carousel-img{
+        max-height: 200px;
+    }
+}
+/*Fine css Gianmarco*/
+/*Inizio css Valerio*/
+#my-searchbar {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-image: url('img/search.png');
+    padding-left: 20px;
+    background-position: left;
+    background-origin: padding-box;
+
+}
+::placeholder {
     color: black;
     opacity: 1;
 }
 
-.modalinput{
-    border:none;
+.modalinput {
+    border: none;
     border-bottom: 2px solid black;
 }
 
 
-#modaldate{
+#modaldate {
     max-width: 90px;
 }
-#modaltime{
+
+#modaltime {
     max-width: 55px;
 }
+
 #modalperson {
-        max-width: 60px;
-}
-#searchbar{
-    background-position: left;
-    background-size: contain;   
-    background-origin: padding-box;
-    background-repeat: no-repeat;
-    background-image: url('img/search.png');
-    padding-left: 30px;
-
+    max-width: 60px;
 }
 
-#containerforlist{
+
+#containerforlist {
     display: flex;
-    justify-content: center ;
+    justify-content: center;
 }
-#checklist{
+
+#checklist {
     max-width: 300px;
     margin-left: 20px;
     margin-right: 70px;
 }
 
-#card{
+#card {
     max-width: 900px;
     min-width: 900px;
 }
 
-#Mycarousel{
-        margin-top: 3%;
-        max-height: 500px;
-        justify-content: center;
-        overflow: hidden;
-        
+#Mycarousel {
+    margin-top: 3%;
+    max-height: 500px;
+    justify-content: center;
+    overflow: hidden;
+
 }
-/* #menuboxtext{
-        display:flex;
-        flex-direction: row;
-} */
-/* #cardbody {
-        display: flex;
-        flex-direction:row ;
-} */
-#cardbody a{
+
+#cardbody a {
     font-size: small;
 }
-.menudescription a{
+
+.menudescription a {
     text-align: left;
 }
 
@@ -154,7 +171,7 @@
     padding-left: 11%;
     padding-top: 5%;
     padding-bottom: 2%;
-}   
+}
 
 .App {
     background-color: #E9E9E9;
@@ -175,28 +192,7 @@
     align-items: flex-start
 }
 
-
-.NavEnterBtn {
-    border-radius: 35%;
-    background-color: black;
-}
-
-/*
-TODO si può fare solo con bootstrap
-.NavSearch {
-    border-radius: 5%;
-    transition: none;
-    border-color: black;
-
-}*/
-
-/*Fine css Vale*/
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
+/*Fine css Valerio*/
 .App-header {
     background-color: #282c34;
 
@@ -211,17 +207,8 @@ TODO si può fare solo con bootstrap
 .App-link {
     color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 /*Inizio CSS Mirco*/
-.mostra-underlined{
+.mostra-underlined {
     text-decoration: underline;
 }
 /*Fine CSS Mirco*/

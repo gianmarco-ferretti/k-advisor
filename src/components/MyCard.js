@@ -8,13 +8,8 @@ import MyCardComments from "./MyCardComments";
 import MyPreferiti from "./MyPreferitiIcon";
 
 
-//TODO da usare Is_open per le variabili
 export default function MyCard({ristorante}) {
     const [modalShow, setModalShow] = React.useState(false);
-
-    function dollarToEuros(string) {
-        return (string.replaceAll("$", "€"));
-    }
 
     return (
         <Card className={'my-3 overflow-hidden'}>
@@ -35,21 +30,28 @@ export default function MyCard({ristorante}) {
                                 className={'text-black-50 font-weight-bold'}>{ristorante.num_reviews} recensioni
                             <span className={'separator font-weight-bolder'}>|</span>
                             </span>
-                            <span className="d-flex ms-1 text-danger font-weight-bold">Oggi chiuso</span>
+                            {(ristorante.is_open) ?
+                                <span className="d-flex ms-1 text-black-50 font-weight-bold">Aperto Ora</span>
+                                :
+                                <span className="d-flex ms-1 text-danger font-weight-bold">Oggi Chiuso</span>}
                         </Card.Text>
                         <Card.Text className="d-flex text-black-50 font-weight-bold">
                             <span>{ristorante.category.localized_name}</span>
                             <span className={'separator font-weight-bolder'}>|</span>
                             <span className="ms-1"
-                                  id={'fascia_di_prezzo'}>{dollarToEuros(ristorante.price_level)}</span>
+                                  id={'fascia_di_prezzo'}>{ristorante.price_level.replaceAll("$", "€")}</span>
                             <span className={'separator font-weight-bolder'}>|</span>
                             <span className="separator text-body"><GiKnifeFork/></span>
                             <span>Menù</span>
                         </Card.Text>
                         <MyCardComments ristorante={ristorante}/>
                         <Card.Footer className={'bg-white'}>
-                            <Button variant="warning" className="rounded-pill font-weight-bold btn-prenota"
-                                    onClick={() => setModalShow(true)}>Prenota</Button>
+                            {(ristorante.can_book) ?
+                                <Button variant="warning" className="rounded-pill font-weight-bold btn-prenota"
+                                        onClick={() => setModalShow(true)}>Prenota</Button>
+                                :
+                                <Button variant="warning"
+                                        className="rounded-pill font-weight-bold btn-prenota disabled">Prenota</Button>}
                             <MyModalPrenota
                                 show={modalShow}
                                 onHide={() => setModalShow(false)}

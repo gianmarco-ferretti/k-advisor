@@ -9,8 +9,6 @@ export default function MySingleResaturant() {
     const location = useLocation();
     const ristorante = location.state.ristorante;
 
-    console.log(ristorante)
-
     return (
         <div>
             <MySingleResHeader ristorante={ristorante}/>
