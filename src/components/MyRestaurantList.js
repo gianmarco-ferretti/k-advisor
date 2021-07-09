@@ -9,13 +9,10 @@ import MyInfoChecklist from "./MyInfoChecklist";
 function MyRestaurantList() {
     const ristoranti = useSelector(state => state.ristoranti);
     const filtri = useSelector(state => state.filtri);
-    const searchValue = useSelector(state => state.searchValue).toString().toLowerCase();
 
     const rFiltrati = [];
     ristoranti.map((ristorante) => (filtri.includes(ristorante.category.name) ? rFiltrati.push(ristorante) : null))
     ristoranti.map((ristorante) => (filtri.includes(ristorante.can_book + "") ? rFiltrati.push(ristorante) : null))
-    ristoranti.map((ristorante) => (ristorante.name.toLowerCase().includes(searchValue) && searchValue != "") ? rFiltrati.push(ristorante) : null)
-
 
     /* TODO, far vedere a Valerio le differenze con il suo vecchio codice*/
 
@@ -33,8 +30,6 @@ function MyRestaurantList() {
                     console.log(sFilRes)
                 }
             })*/
-
-
     return (
         <>
             <MyListHeader></MyListHeader>
