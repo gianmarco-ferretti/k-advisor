@@ -13,7 +13,7 @@ function MyPreferitiIcon({ristorante}) {
                 <FaHeart className={'btn-preferiti-red'} size={20}
                          onClick={() => dispatch(removeRistorante(ristorante))}/>
                 :
-                <FaRegHeart className={'btn-preferiti'} size={30} onClick={() => dispatch(addRistorante(ristorante))}/>
+                <FaRegHeart className={'btn-preferiti'} size={20} onClick={() => dispatch(addRistorante(ristorante))}/>
             }
         </>
 

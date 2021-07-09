@@ -7,22 +7,37 @@ import {AiOutlineClockCircle} from "react-icons/ai"
 
 import {Container, Row} from "react-bootstrap";
 import MyRating from "./MyRating";
+import {useDispatch, useSelector} from "react-redux";
+import {FaHeart, FaRegHeart} from "react-icons/all";
+import {addRistorante, removeRistorante} from "../actions";
 
 
 export default function MySingleResHeader({ristorante}) {
+    const dispatch = useDispatch();
+    const rPreferiti = useSelector(state => state.ristorantiPreferiti)
 
     /*TODO migliorare resa grafica, prendere spunto da MyCard*/
     return (
         <Container fluid className={"bg-white"} id={"IntestazioneSingle-container"}>
             <Row className={"justify-content-left  intestazione"}>
                 <h3 className={"align-self-end"}>{ristorante.name}</h3>
+                {(rPreferiti.includes(ristorante)) ?
+
+                    <FaHeart className={'my-btn-info-red mt-2'} size={20}
+                             onClick={() => dispatch(removeRistorante(ristorante))} />
+                    :
+                    <div className={'my-btn-info mt-2'}>
+                    <FaRegHeart  size={20} onClick={() => dispatch(addRistorante(ristorante))}/>
+                        <span className={'pl-2 text-body'}>Salva</span>
+                    </div>
+                }
             </Row>
-            <Row className={"justify-content-left  intestazione"}>
+            <Row className={"justify-content-left"}>
                 <MyRating score={ristorante.rating}/>
                 <a>{ristorante.num_reviews}</a>
                 <a> |{ristorante.price_level.replaceAll("$", "€")}</a>
             </Row>
-            <Row className={"justify-content-left  intestazione"}>
+            <Row className={"justify-content-left"}>
         <span>
         <a>
              <MdPlace/>

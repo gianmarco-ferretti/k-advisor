@@ -77,6 +77,22 @@
     color: red;
 }
 
+[class*='my-btn-info'] {
+    position: absolute;
+    color: black;
+    top: auto;
+    right: 100px;
+    transition: 0.3s;
+}
+
+.my-btn-info:hover {
+    color: red;
+}
+
+.my-btn-info-red {
+    color: red;
+}
+
 .my-modal-icon {
     color: #5DC7A0;
 }
@@ -104,6 +120,12 @@
 
     .my-search-result {
         position: static;
+    }
+
+    [class*='my-btn-info'] {
+
+        right: 20px;
+
     }
 }
 
