@@ -30,10 +30,10 @@ export default function MyComSec({ ristorante }) {
           {commenti.map((commento, i) => (
             <Card.Body>
               <Row>
-                <Col className={"d-flex col-2 col-lg-2 mt-2 pl-3"}>
-                  {/* TODO fare l onclick event */}
-                  <p>
-                    <span>
+                <Col className={"d-flex col-2 col-lg-2 mt-2 pl-3 justify-content-center"}>
+                    {/* TODO fare l onclick event */}
+                    <p>
+                      <span>
                       <div>
                         <img id="userimage" src={commento.user_avatar}></img>
                       </div>
@@ -42,14 +42,14 @@ export default function MyComSec({ ristorante }) {
                     </span>
                   </p>
                 </Col>
-                <Col className={" col-9 col-lg-9"}>
+                <Col className={" col-10 col-lg-10"}>
                   <p>
                     <div className={"d-flex"}>
                       <MyRating score={commento.rating} />
                       <div> Recensito ieri</div>
                     </div>
                     <span className={"text-black font-weight-bold"}>
-                      <div>{commento.name.substring(3)}</div>
+                      <div>{commento.name.substring(3)}</div> 
                       <br></br>
                     </span>
                     <span>

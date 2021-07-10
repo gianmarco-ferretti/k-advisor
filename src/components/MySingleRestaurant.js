@@ -4,7 +4,7 @@ import MyCarousel from './MyCarousel'
 import {useLocation} from 'react-router';
 import MyMenu from './MyMenu';
 import MyComSec from './MyComSec';
-
+import { Col,Container,Row } from 'react-bootstrap';
 
 
 export default function MySingleResaturant() {
@@ -13,12 +13,18 @@ export default function MySingleResaturant() {
     console.log(ristorante)
 
     return (
-        <div>
+        <Container>
+             <Row>
             <MySingleResHeader ristorante={ristorante}/>
             <MyCarousel ristorante= {ristorante}/>
             <MyMenu ristorante={ristorante}/>
-            <MyComSec ristorante={ristorante}/>
            
-        </div>
+            <Col className={"col-8 "}>
+            <MyComSec ristorante={ristorante}/>
+            </Col>
+            <Col lassName={"col-4"}>
+            </Col>
+            </Row>
+        </Container>
     )
 }

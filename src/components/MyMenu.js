@@ -9,31 +9,16 @@ export default function MyMenu({ristorante}) {
         <Container className={"mt-4"}>
             {
                 (ristorante.menu === undefined) ?
-                    <div></div>
+                    <Card.Header>
+                    <span className="text-left">{" "}<h4>Questo Ristorante non ha caricato il menù</h4></span>
+                    </Card.Header>
                     :
                     <Card>
                         <Card.Header>
                                <span className="text-left">{" "}<h4>Menu</h4></span>
                         </Card.Header>
                         <Card.Body id="cardbody" className='row'>
-                            {ristorante.menu.map((k, i) => (
-                                <Container id="menuboxtext" className='row' key={k}>
-                                    <div className="menudescription">
-                                        <Col className='col-sm'>
-                                            <p className="text-left">
-                                                <a>{ristorante.menu[i].description}</a>
-                                            </p>
-                                        </Col>
-                                        <Col className='col-sm'>
-                                            <div className="menuprice">
-                                                <p className="text-left">
-                                                    <a>{ristorante.menu[i].price} €</a>
-                                                </p>
-                                            </div>
-                                        </Col>
-                                    </div>
-                                </Container>
-                            ))}
+               
                         </Card.Body>
                         <Card.Footer>
                             <p className="text-left"><a> <GiKnifeFork/> Mostra il menù completo</a></p>
