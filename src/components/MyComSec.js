@@ -22,7 +22,7 @@ export default function MyComSec({ ristorante }) {
             <span className={"d-flex justify-content-between"}>
               <div className={"text-black font-weight-bold"}>RECENSIONI ({commenti.length})</div>
               <div>
-              <Button variant="dark" size="sm">Dark</Button>{' '}
+              <Button variant="dark" size="sm">Scrivi una recensione</Button>{' '}
               </div>
             </span>
           </Card.Header>
@@ -30,7 +30,7 @@ export default function MyComSec({ ristorante }) {
           {commenti.map((commento, i) => (
             <Card.Body>
               <Row>
-                <Col className={"d-flex col-2 col-lg-2 mt-2 pl-3 justify-content-center"}>
+                <Col className={"d-flex col-auto col-lg-2 mt-2 pl-3 justify-content-center"}>
                     {/* TODO fare l onclick event */}
                     <p>
                       <span>
@@ -42,7 +42,7 @@ export default function MyComSec({ ristorante }) {
                     </span>
                   </p>
                 </Col>
-                <Col className={" col-10 col-lg-10"}>
+                <Col className={" col-auto col-lg-10"}>
                   <p>
                     <div className={"d-flex"}>
                       <MyRating score={commento.rating} />

@@ -19,10 +19,10 @@ export default function MySingleResaturant() {
             <MyCarousel ristorante= {ristorante}/>
             <MyMenu ristorante={ristorante}/>
            
-            <Col className={"col-8 "}>
+            <Col className={"col-12 col-lg-8"}>
             <MyComSec ristorante={ristorante}/>
             </Col>
-            <Col lassName={"col-4"}>
+            <Col lassName={"col-12 col-lg-4"}>
             </Col>
             </Row>
         </Container>
