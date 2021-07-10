@@ -2,7 +2,6 @@ import { Card, Button, Col, Container, Row } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import MyRating from "./MyRating";
-import { BiCommentMinus } from "react-icons/bi";
 
 export default function MyComSec({ ristorante }) {
   let [commenti, setCommenti] = useState({ commmenti: [] });
@@ -15,7 +14,7 @@ export default function MyComSec({ ristorante }) {
 
   console.log(commenti);
 
-  if (commenti[0] !== undefined && commenti[1] !== undefined) {
+  if (commenti[0] !== undefined ) {
     return (
       <Container className={"mt-4"}>
         <Card>
@@ -31,7 +30,7 @@ export default function MyComSec({ ristorante }) {
           {commenti.map((commento, i) => (
             <Card.Body>
               <Row>
-                <Col className={"d-flex col-3 col-lg-3"}>
+                <Col className={"d-flex col-2 col-lg-2 mt-2 pl-3"}>
                   {/* TODO fare l onclick event */}
                   <p>
                     <span>
@@ -74,17 +73,31 @@ export default function MyComSec({ ristorante }) {
         </Card>
       </Container>
     );
-  } else if (commenti[0] !== undefined) {
-    return (
-      <span className={"text-black-50 font-weight-bold"}>
-        <div>"{commenti[0].name.substring(3)} "</div>
-      </span>
-    );
+  
   } else {
     return (
-      <span className={"text-black-50 font-weight-bold"}>
-        <div>{ristorante.address_obj.city}</div>
-      </span>
+      <span>
+        <Container className={"mt-4"}>
+        <Card>
+          <Card.Header>
+            <span className={"d-flex justify-content-between"}>
+              <div className={"text-black font-weight-bold"}> Nessun Commento trovato per questo ristorante</div>
+              <div>
+              <Button variant="dark" size="sm">Scrivi una recensione</Button>{' '}
+              </div>
+            </span>
+          </Card.Header>
+          <Card.Body>
+            <br/><br/><br/><br/><br/><br/>
+          </Card.Body>
+          </Card>
+          </Container>
+          </span>
+          
+
+
+       
+      
     );
   }
 }
