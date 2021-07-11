@@ -8,7 +8,14 @@ import { useState } from "react";
 export default function MyMenu({ ristorante }) {
   const [readMore,setReadMore] = useState(false);
 
-    const extraContent = <div>
+
+function setMoreContent () {
+  if (  ristorante.menu == undefined || ristorante.menu[0]  == undefined ||ristorante.menu[1] == undefined ||ristorante.menu[2] == undefined) {
+    return(  <div></div> )
+  } else {
+        return(  
+            // qua si puo fare un map nel caso di menu piu lunghi
+            <div>
             <Col className={"col-12 col-lg-8"}>
               <p>{ristorante.menu[2].description}</p>
             </Col>
@@ -16,7 +23,10 @@ export default function MyMenu({ ristorante }) {
               <p>{ristorante.menu[2].price}</p>
             </Col>
     </div>
-
+        )
+  }
+}
+    const extraContent = setMoreContent();
     const linkName = readMore?  <p className={"text-dark"}> <h6> <GiKnifeFork/>  Mostra meno</h6></p>:<p className={"text-dark"}><h6> <GiKnifeFork/>  Mostra il menù completo</h6></p>
 
   return (
@@ -64,4 +74,5 @@ export default function MyMenu({ ristorante }) {
       )}
     </Container>
   );
-}
+
+      }
