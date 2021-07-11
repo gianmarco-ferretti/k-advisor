@@ -3,31 +3,46 @@ import { Card, Container, Col } from "react-bootstrap";
 import { GiKnifeFork } from "react-icons/gi";
 import { useState } from "react";
 
-
-
 export default function MyMenu({ ristorante }) {
-  const [readMore,setReadMore] = useState(false);
+  const [readMore, setReadMore] = useState(false);
 
-
-function setMoreContent () {
-  if (  ristorante.menu == undefined || ristorante.menu[0]  == undefined ||ristorante.menu[1] == undefined ||ristorante.menu[2] == undefined) {
-    return(  <div></div> )
-  } else {
-        return(  
-            // qua si puo fare un map nel caso di menu piu lunghi
-            <div>
-            <Col className={"col-12 col-lg-8"}>
-              <p>{ristorante.menu[2].description}</p>
-            </Col>
-            <Col className={"col-12 col-lg-4"}>
-              <p>{ristorante.menu[2].price}</p>
-            </Col>
-    </div>
-        )
+  function setMoreContent() {
+    if (
+      ristorante.menu == undefined ||
+      ristorante.menu[0] == undefined 
+    ) {
+      return <div></div>;
+    } else {
+      return (
+        // qua si puo fare un map nel caso di menu piu lunghi
+        <div>
+          <Col className={"col-12 col-lg-8"}>
+            <p>{ristorante.menu[2].description}</p>
+          </Col>
+          <Col className={"col-12 col-lg-4"}>
+            <p>{ristorante.menu[2].price}</p>
+          </Col>
+        </div>
+      );
+    }
   }
-}
-    const extraContent = setMoreContent();
-    const linkName = readMore?  <p className={"text-dark"}> <h6> <GiKnifeFork/>  Mostra meno</h6></p>:<p className={"text-dark"}><h6> <GiKnifeFork/>  Mostra il menù completo</h6></p>
+  const extraContent = setMoreContent();
+  const linkName = readMore ? (
+    <p className={"text-dark"}>
+      {" "}
+      <h6>
+        {" "}
+        <GiKnifeFork /> Mostra meno
+      </h6>
+    </p>
+  ) : (
+    <p className={"text-dark"}>
+      <h6>
+        {" "}
+        <GiKnifeFork /> Mostra il menù completo
+      </h6>
+    </p>
+  );
 
   return (
     <Container className={"mt-4"}>
@@ -37,7 +52,7 @@ function setMoreContent () {
             {" "}
             <h4>Questo Ristorante non ha caricato il menù</h4>
           </span>
-        </Card.Header>  
+        </Card.Header>
       ) : (
         <Card>
           <Card.Header>
@@ -64,15 +79,19 @@ function setMoreContent () {
 
           <Card.Footer>
             <p className="text-left">
-            <a className="read-more-link" onClick={()=>{setReadMore(!readMore)}}><h2>{linkName}</h2></a>
-      {readMore && extraContent}
-                
-              
+              <a
+                className="read-more-link"
+                onClick={() => {
+                  setReadMore(!readMore);
+                }}
+              >
+                <h2>{linkName}</h2>
+              </a>
+              {readMore && extraContent}
             </p>
           </Card.Footer>
         </Card>
       )}
     </Container>
   );
-
-      }
+}
