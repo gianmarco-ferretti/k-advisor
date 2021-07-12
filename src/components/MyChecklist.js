@@ -23,7 +23,7 @@ export default function MyChecklist() {
                     <Form.Check type="checkbox" name="restaurant" label="Ristoranti" onChange={handleClick}/>
                     <Form.Check type="checkbox" name="pastry" label="Pasticcerie e gelaterie" onChange={handleClick}/>
                     <Form.Check type="checkbox" name="cafe" label="Caffè e tè" onChange={handleClick}/>
-                    <a href="#" className="text-body mostra-underlined"><strong>Mostra di più</strong></a>
+                    <p className="text-body mostra-underlined"><strong>Mostra di più</strong></p>
                     <hr></hr>
                     <h5><strong>Prenotazioni</strong></h5>
                     <Form.Check type="checkbox" name="true" label="Prenotabile" onChange={handleClick}/>

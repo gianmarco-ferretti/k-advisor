@@ -1,9 +1,13 @@
 import React from 'react';
 import {Container, Row, Table} from "react-bootstrap";
-
-/*TODO Gianmarco, mettere bordo etc etc*/
+import {useDispatch, useSelector} from "react-redux";
+import {MdDeleteForever} from "react-icons/all";
+import {removeReservation} from "../actions";
 
 function MyPrenotazioni() {
+    const dispatch = useDispatch();
+    const prenotazioni = useSelector(state => state.prenotazioni);
+
     return (
         <>
             <Container fluid className={'bg-white'} id={'Intestazione-container'}>
@@ -12,35 +16,33 @@ function MyPrenotazioni() {
                 </Row>
             </Container>
             <Container className={'min-vh-100 mt-3'}>
-                <Table striped bordered hover variant={'dark'}>
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td colSpan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                    </tbody>
-                </Table>
+                <div className={'table-responsive'}>
+                    <Table striped bordered hover className={'my-tab'}>
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ristorante</th>
+                            <th>Data</th>
+                            <th>Orario</th>
+                            <th>Opsiti</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {prenotazioni.map((prenotazione, i) =>
+                            <tr key={i}>
+                                <td>{i + 1}
+                                    <MdDeleteForever size={30} className={'text-danger ml-2 mb-1'}
+                                                     onClick={() => dispatch(removeReservation(prenotazione))}/>
+                                </td>
+                                <td>{prenotazione.ristorante}</td>
+                                <td>{prenotazione.reservationDate.getDate()}/{prenotazione.reservationDate.getMonth()}/{prenotazione.reservationDate.getFullYear()}</td>
+                                <td>{prenotazione.reservationTime}</td>
+                                <td>{prenotazione.reservationGuests}</td>
+                            </tr>
+                        )}
+                        </tbody>
+                    </Table>
+                </div>
             </Container>
         </>
     );

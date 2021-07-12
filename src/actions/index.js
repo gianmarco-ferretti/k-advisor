@@ -35,3 +35,11 @@ export const addSearch = (searchterm) => {
 export const removeAllSearch =  () => {
         return {type :"REMOVE_ALL_SEARCH"}
 }
+
+export const addReservation = (reservation) => {
+    return {type: 'ADD_RESERVATION', payload: reservation}
+}
+
+export const removeReservation = (reservation) => {
+    return {type: 'REMOVE_RESERVATION', payload: reservation}
+}

@@ -6,10 +6,13 @@ import MyRating from "./MyRating";
 import {GiKnifeFork} from "react-icons/gi"
 import MyCardComments from "./MyCardComments";
 import MyPreferiti from "./MyPreferitiIcon";
+import {useSelector} from "react-redux";
 
 
 export default function MyCard({ristorante}) {
     const [modalShow, setModalShow] = React.useState(false);
+    const prenotazioni = useSelector(state => state.prenotazioni)
+
 
     return (
         <Card className={'my-3 overflow-hidden'}>
@@ -20,10 +23,13 @@ export default function MyCard({ristorante}) {
                 <Col xs={12} lg={8}>
                     <Card.Body className="p-2">
                         <MyPreferiti ristorante={ristorante}/>
+
                         <Link to={{pathname: `/restaurant/${ristorante.location_id}/`, state: {ristorante}}}>
                             <Card.Title
                                 className="text-start text-body"><h4><strong>{ristorante.name}</strong></h4>
                             </Card.Title></Link>
+                        {prenotazioni.map((prenotazione, i) => (prenotazione.ristorante === ristorante.name) ?
+                            <h4 className={'text-success font-weight-bold'} key={i}>Prenotato</h4> : null)}
                         <Card.Text className="d-flex mb-0">
                             <MyRating score={ristorante.rating}/>
                             <span
@@ -55,6 +61,7 @@ export default function MyCard({ristorante}) {
                             <MyModalPrenota
                                 show={modalShow}
                                 onHide={() => setModalShow(false)}
+                                ristorante={ristorante}
                             />
                         </Card.Footer>
                     </Card.Body>

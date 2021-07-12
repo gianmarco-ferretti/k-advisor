@@ -4,14 +4,15 @@ import fetchRistorantiReducer from "./fetchRistorantiReducer";
 import filterReducer from "./filterReducer";
 import searchReducer from "./searchReducer";
 import preferitiReducer from "./preferitiReducer";
+import reservationReducer from "./reservationReducer";
 
 const allReducers = combineReducers({
     ristoranti: fetchRistorantiReducer,
     logged: loggedReducer,
     filtri: filterReducer,
     ristorantiPreferiti: preferitiReducer,
-    /*TODO vedere dove valerio non ha usato il camelcase*/
-    searchValue: searchReducer
+    searchValue: searchReducer,
+    prenotazioni: reservationReducer
 })
 
 export default allReducers;

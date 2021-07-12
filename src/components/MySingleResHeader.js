@@ -4,8 +4,7 @@ import {FiPhone} from "react-icons/fi"
 import {GiKnifeFork} from "react-icons/gi"
 import {GrPersonalComputer} from "react-icons/gr"
 import {AiOutlineClockCircle} from "react-icons/ai"
-
-import {Container, Row} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import MyRating from "./MyRating";
 import {useDispatch, useSelector} from "react-redux";
 import {FaHeart, FaRegHeart} from "react-icons/all";
@@ -16,21 +15,24 @@ export default function MySingleResHeader({ristorante}) {
     const dispatch = useDispatch();
     const rPreferiti = useSelector(state => state.ristorantiPreferiti)
 
-    /*TODO migliorare resa grafica, prendere spunto da MyCard*/
     return (
         <Container fluid className={"bg-white"} id={"IntestazioneSingle-container"}>
             <Row className={"justify-content-left  intestazione"}>
-                <h3 className={"align-self-end"}>{ristorante.name}</h3>
-                {(rPreferiti.includes(ristorante)) ?
+                <Col className={'pl-0'}>
+                    <h3 className={"align-self-end"}>{ristorante.name}</h3>
+                </Col>
+                <Col xs={4}>
+                    {(rPreferiti.includes(ristorante)) ?
 
-                    <FaHeart className={'my-btn-info-red mt-2'} size={20}
-                             onClick={() => dispatch(removeRistorante(ristorante))} />
-                    :
-                    <div className={'my-btn-info mt-2'}>
-                    <FaRegHeart  size={20} onClick={() => dispatch(addRistorante(ristorante))}/>
-                        <span className={'pl-2 text-body'}>Salva</span>
-                    </div>
-                }
+                        <FaHeart className={'my-btn-info-red mt-2'} size={20}
+                                 onClick={() => dispatch(removeRistorante(ristorante))}/>
+                        :
+                        <div className={'my-btn-info mt-2'}>
+                            <FaRegHeart size={20} onClick={() => dispatch(addRistorante(ristorante))}/>
+                            <span className={'pl-2 text-body'}>Salva</span>
+                        </div>
+                    }
+                </Col>
             </Row>
             <Row className={"justify-content-left"}>
                 <MyRating score={ristorante.rating}/>
@@ -41,7 +43,7 @@ export default function MySingleResHeader({ristorante}) {
         <span>
         <a>
              <MdPlace/>
-            {ristorante.address_obj.city}{" "}
+            {ristorante.address_obj.city}{", "}
             {ristorante.address_obj.country}{" "}
         </a>
         <a> | <FiPhone/> {ristorante.phone}</a>

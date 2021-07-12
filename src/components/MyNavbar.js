@@ -1,11 +1,10 @@
 import React from 'react'
-import {Navbar, Form, Button, Container, Col, Nav, Card, Table} from 'react-bootstrap'
+import {Navbar, Form, Button, Container, Col, Nav, Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import {useDispatch, useSelector} from "react-redux";
 import {login} from "../actions";
 import {addSearch} from '../actions'
 import {removeAllSearch} from '../actions'
-import MyCard from "./MyCard";
 
 
 export default function MyNavbar() {
@@ -15,7 +14,7 @@ export default function MyNavbar() {
     const searchValue = useSelector(state => state.searchValue).toString().toLowerCase();
 
     const rSearched = [];
-    ristoranti.map((ristorante) => (ristorante.name.toLowerCase().includes(searchValue) && searchValue != "") ? rSearched.push(ristorante) : null)
+    ristoranti.map((ristorante) => (ristorante.name.toLowerCase().includes(searchValue) && searchValue !== "") ? rSearched.push(ristorante) : null)
 
     const handleChange = (e) => {
         dispatch(removeAllSearch(e.target.value))
@@ -34,8 +33,7 @@ export default function MyNavbar() {
                     <Col>
                         <Nav className="me-auto mr-5">
                             <Form inline className={'mr-5'}>
-                           {/* TODO ripulire searchbar dopo aver cliccato il link*/}
-                                <Col>
+                                <Col xs={'pl-0'}>
                                     <input type="text" id='my-searchbar' placeholder="Search" size='sm'
                                            onChange={handleChange}/>
                                     {((rSearched.length < 1)) ? null
@@ -43,7 +41,7 @@ export default function MyNavbar() {
                                         <label className={' mt-1 bg-white my-search-result'}>
                                             <Table striped bordered hover className={'m-0'}>
                                                 {rSearched.map((ristorante, i) =>
-                                                    <tr>
+                                                    <tr key={i}>
                                                         <td>
                                                             <Link to={{
                                                                 pathname: `/restaurant/${ristorante.location_id}/`,
@@ -57,7 +55,6 @@ export default function MyNavbar() {
                                             </Table>
                                         </label>
                                     }
-
                                 </Col>
                             </Form>
                             {(logged) ?

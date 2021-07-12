@@ -13,7 +13,7 @@ function MyPreferitiList() {
                     <h3 className={'align-self-end'}>Ristoranti Preferiti</h3>
                 </Row>
             </Container>
-            <Container>
+            <Container className={'min-vh-100'}>
                 {rPreferiti.map((ristorante, i) =>
                     <MyCard ristorante={ristorante} key={i}></MyCard>
                 )}

@@ -33,7 +33,7 @@ function MyRestaurantList() {
     return (
         <>
             <MyListHeader></MyListHeader>
-            <Container className={'mt-3'}>
+            <Container className={'mt-3 min-vh-100'}>
                 <Row className={'justify-content-center'}>
                     <Col className={'col-12 col-lg-3'}> {/* TODO provare lg={3}*/}
                         <MyChecklist></MyChecklist>
