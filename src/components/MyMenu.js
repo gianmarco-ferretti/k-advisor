@@ -8,8 +8,8 @@ export default function MyMenu({ ristorante }) {
 
   function setMoreContent() {
     if (
-      ristorante.menu == undefined ||
-      ristorante.menu[0] == undefined 
+      ristorante.menu === undefined ||
+      ristorante.menu[0] === undefined 
     ) {
       return <div></div>;
     } else {
